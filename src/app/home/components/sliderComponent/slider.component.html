@@ -1,22 +1,22 @@
 <div class="bg-[rgb(15,7,21)] w-full px-5 py-5 flex flex-col items-center gap-[1.5rem] text-[rgb(255,255,255)] overflow-hidden">
-    <div class="text-[4.2rem]"><b>Recent post</b></div>
+    <div class="text-[3.5rem] sm_max:text-[3rem]"><b>Recent post</b></div>
     <div class="flex gap-10 items-center justify-center overflow-hidden">
-        <button (click)="previous()" class="text-[3rem] rounded-2xl active:scale-95">
-            <i class="fa-solid fa-caret-left"></i>
+        <button (click)="previous()" class="text-[2rem] text-gray-500 rounded-lg active:scale-95">
+            <i class="fa-solid fa-angle-left"></i>
         </button>
-        <div class="flex items-center justify-center w-[59rem] overflow-hidden slider_container" >
+        <div class="flex items-center justify-center w-[59rem] lg_max:w-[45rem] md_max:w-[38rem] overflow-hidden slider_container" >
             <div class="slider-container">
                 <div
                     *ngFor="let post of posts"
-                    class="post-card"
+                    class="post-card rounded-md"
                     [ngClass]="{ 'slide-left': slideLeft, 'slide-right': slideRight }">
                     <img [src]="" alt="">
                     {{post.num}}
                 </div>
             </div>
         </div>
-        <button (click)="next()" class=" text-[3rem] rounded-2xl active:scale-95">
-            <i class="fa-solid fa-caret-right"></i>
+        <button (click)="next()" class=" text-[2rem] text-gray-500 rounded-lg active:scale-95">
+            <i class="fa-solid fa-angle-right"></i>
         </button>
     </div>
     <div class="">
