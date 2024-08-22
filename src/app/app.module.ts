@@ -13,6 +13,7 @@ import { HomeModule } from './home/home.module';
     BrowserModule,
     AppRoutingModule,
     HomeModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

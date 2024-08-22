@@ -1,21 +1,26 @@
 import { NgModule } from "@angular/core";
 import { HeaderComponent } from "./components/header/header.component";
-import { Layeronecomponent } from "./components/layerOne/layerone.conponent";
 import { MainPageComponent } from "./components/mainPage/mainpage.component";
+import { SliderComponent } from "./components/sliderComponent/slider.component";
+import { LayerOneComponent } from "./components/layerOne/layerone.conponent";
+import { CommonModule } from "@angular/common";
 
 @NgModule({
     declarations:[
         HeaderComponent,
-        Layeronecomponent,
-        MainPageComponent   
+        MainPageComponent,
+        SliderComponent,
+        LayerOneComponent
+
     ],
     imports:[
-        
+        CommonModule
     ],
     exports:[
         HeaderComponent,
-        Layeronecomponent,
-        MainPageComponent
+        MainPageComponent,
+        SliderComponent,
+        LayerOneComponent
     ]
 })
 

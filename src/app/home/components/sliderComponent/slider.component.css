@@ -1,0 +1,60 @@
+.slider-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    transition: transform 1s ease-in-out
+}
+  
+/* Post card styles */
+.post-card {
+    min-width: 17rem;
+    height: 11rem;
+    background-color: #a7f3d0; /* bg-green-200 */
+    text-align: center;
+    line-height: 11rem;
+    transition: transform 1s ease-in-out
+}
+
+/* Class to trigger sliding left */
+.slide-left {
+    animation: slide-left 1s ease-in-out forwards;
+}
+
+/* Class to trigger sliding right */
+.slide-right {
+    animation: slide-right 1s ease-in-out forwards; 
+}
+
+/* Animation for sliding */
+@keyframes slide-left {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(calc(-100% - 4rem));
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+  
+@keyframes slide-right {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(calc(100% + 4rem));
+    }
+    100% {
+        transform: translateX(0);
+    } 
+}
+
+
+
+
+

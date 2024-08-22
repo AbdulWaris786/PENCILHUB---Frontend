@@ -1,9 +1,7 @@
-import { Component } from "@angular/core";
+import { Component, OnDestroy, OnInit } from "@angular/core";
 
 @Component({
-    selector:'app-layer-one',
-    templateUrl:'./layerone.conponent.html',
-    styleUrls:['./layerone.conponent.css']
+    selector : "app-layer-one",
+    templateUrl : "./layerone.conponent.html",
 })
-
-export class Layeronecomponent {}
+export class LayerOneComponent{}
