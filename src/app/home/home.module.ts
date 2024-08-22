@@ -1,9 +1,9 @@
 import { NgModule } from "@angular/core";
 import { HeaderComponent } from "./components/header/header.component";
 import { MainPageComponent } from "./components/mainPage/mainpage.component";
-import { SliderComponent } from "./components/sliderComponent/slider.component";
 import { LayerOneComponent } from "./components/layerOne/layerone.conponent";
 import { CommonModule } from "@angular/common";
+import { SliderComponent } from "./components/sliderComponent/slider.component";
 
 @NgModule({
     declarations:[
