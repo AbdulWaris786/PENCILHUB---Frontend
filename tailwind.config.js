@@ -27,7 +27,7 @@ module.exports = {
         "lg_max" : { max : "1004px" },
         "xl_max" : { max : "1138px" },
         "2xl_max" : { max : "1536px" }
-      }
+      },
     },
   },
   plugins: [],
