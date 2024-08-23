@@ -3,6 +3,7 @@ import { HeaderComponent } from "./components/header/header.component";
 import { MainPageComponent } from "./components/mainPage/mainpage.component";
 import { LayerOneComponent } from "./components/layerOne/layerone.conponent";
 import { CommonModule } from "@angular/common";
+import { ConatactUsComponent } from "./components/contactUs/contactUs.component";
 import { SliderComponent } from "./components/sliderComponent/slider.component";
 
 @NgModule({
@@ -10,7 +11,8 @@ import { SliderComponent } from "./components/sliderComponent/slider.component";
         HeaderComponent,
         MainPageComponent,
         SliderComponent,
-        LayerOneComponent
+        LayerOneComponent,
+        ConatactUsComponent
 
     ],
     imports:[
