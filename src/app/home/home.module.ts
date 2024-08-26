@@ -22,7 +22,8 @@ import { SliderComponent } from "./components/sliderComponent/slider.component";
         HeaderComponent,
         MainPageComponent,
         SliderComponent,
-        LayerOneComponent
+        LayerOneComponent,
+        ConatactUsComponent
     ]
 })
 
