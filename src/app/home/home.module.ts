@@ -22,7 +22,8 @@ import { ConatactUsComponent } from "./components/contactUs/contactUs.component"
         HeaderComponent,
         MainPageComponent,
         SliderComponent,
-        LayerOneComponent
+        LayerOneComponent,
+        ConatactUsComponent
     ]
 })
 
