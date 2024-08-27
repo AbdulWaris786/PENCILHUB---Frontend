@@ -1,8 +1,9 @@
 import { NgModule } from "@angular/core";
 import { MainPagePortfolio } from "./components/mainPage/mainpage.component";
-import { HeaderComponent } from "../home/components/header/header.component";
+import { HeaderComponent } from "../shared/components/header/header.component";
 import { HomeModule } from "../home/home.module";
 import { RecentWorksComponent } from "./components/recentWorks/recentworks.component";
+import { SharedModule } from "../shared/shared.module";
 
 @NgModule({
     declarations: [
@@ -10,7 +11,8 @@ import { RecentWorksComponent } from "./components/recentWorks/recentworks.compo
         RecentWorksComponent
     ],
     imports: [
-        HomeModule
+        HomeModule,
+        SharedModule
     ],
     exports: [
         MainPagePortfolio
