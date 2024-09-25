@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
 
 @Component({
     selector : "slider-component",
@@ -6,16 +6,14 @@ import { Component } from "@angular/core";
     styleUrls : ["./slider.component.css"]
 })
 export class SliderComponent {
+    @Input() contentType: string = "" 
+
     posts = [
         {  num: 1, title: "assets/images/Adobe_Photoshop_Lightroom_.png" },
         {  num: 2, title: "assets/images/adobe-photoshop.png" },
         {  num: 3, title: "assets/images/adobe-premiere-pro-.png" },
         {  num: 4, title: "assets/images/Adobe_Audition.png" },
         {  num: 5, title: "assets/images/Layer-21.png" },
-        // {  num: 6, title: "assets/images/Adobe_Audition.png" },
-        // {  num: 7, title: "assets/images/Layer-21.png" },
-        // {  num: 8, title: "assets/images/Layer-21.png" },
-        // {  num: 9, title: "assets/images/Layer-21.png" },
     ];
     
     slideLeft = false;
