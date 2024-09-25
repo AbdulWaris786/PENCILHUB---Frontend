@@ -5,17 +5,22 @@ import { RecentWorksComponent } from "./components/recentWorks/recentworks.compo
 import { SharedModule } from "../shared/shared.module";
 import { WorkedCompaniesComponent } from "./components/workedCompanies/workedCompanies.component";
 import { ShowReelComponent } from "./components/showReel/showReel.component";
+import { CommonModule } from "@angular/common";
+import { inViewDirective } from "../shared/in-view.directive";
 
 @NgModule({
     declarations: [
         MainPagePortfolio,
         RecentWorksComponent,
         WorkedCompaniesComponent,
-        ShowReelComponent
+        ShowReelComponent,
+        inViewDirective
     ],
     imports: [
         HomeModule,
-        SharedModule
+        SharedModule,
+        CommonModule,
+        
     ],
     exports: [
         MainPagePortfolio

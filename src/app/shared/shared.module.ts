@@ -7,15 +7,15 @@ import { RouterModule } from "@angular/router";
 @NgModule({
     declarations:[
         HeaderComponent,
-        ConatactUsComponent
+        ConatactUsComponent,
     ],
     exports:[
         HeaderComponent,
-        ConatactUsComponent
+        ConatactUsComponent,
     ],
     imports:[
         BrowserModule,
-        RouterModule
+        RouterModule,
     ]
 })
 
