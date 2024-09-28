@@ -1,6 +1,16 @@
 <div class="bg-[rgb(15,7,21)] w-full px-5 py-5 flex flex-col items-center gap-[1.5rem] text-[rgb(255,255,255)] overflow-hidden">
-    <div class="text-[3.5rem] sm_max:text-[3rem]"><b>Recent {{ contentType }}</b></div>
-    <div class="flex gap-10 items-center justify-center overflow-hidden">
+    <div 
+        class="text-[3.5rem] sm_max:text-[3rem]"
+        [@slideInLeft]="slideLeftAnimation ? 'visible' : 'hidden'"
+        (inView)="onHeadInView()"
+        inView
+    ><b>Recent {{ contentType }}</b></div>
+    <div 
+        class="flex gap-10 items-center justify-center overflow-hidden"
+        [@slideInBottom]="slideInBottomText ? 'visible' : 'hidden'"
+        (inView)="onSliderInView()"
+        inView
+    >
         <button *ngIf="contentType === 'Post'" (click)="previous()" class="text-[2rem] text-gray-500 rounded-lg active:scale-95">
             <i class="fa-solid fa-angle-left"></i>
         </button>
@@ -19,8 +29,15 @@
             <i class="fa-solid fa-angle-right"></i>
         </button>
     </div>
-    <div class="">
-        <button *ngIf="contentType === 'Post'" class="px-4 py-1 flex text-[rgb(255,255,255)] text-[1.5rem] rounded-lg bg-[rgb(126,74,231)] active:scale-95 ease-in-out transition">
+    <div 
+        [@fadeIn]="fadeIn ? 'visible' : 'hidden'"
+        (inView)="onFadeInInView()"
+        inView>
+        <button 
+            *ngIf="contentType === 'Post'" 
+            class="px-4 py-1 flex text-[rgb(255,255,255)] text-[1.5rem] rounded-lg bg-[rgb(126,74,231)] active:scale-95 ease-in-out transition"
+            
+        >
             <b>More Post</b>
         </button>
     </div>

@@ -1,12 +1,35 @@
-import { Component, Input } from "@angular/core";
+import { ChangeDetectorRef, Component, Input } from "@angular/core";
+import { fadeIn, slideInBottom, slideInLeft } from "src/app/shared/animation";
 
 @Component({
     selector : "slider-component",
     templateUrl : "./slider.component.html",
-    styleUrls : ["./slider.component.css"]
+    styleUrls : ["./slider.component.css"],
+    animations : [
+        slideInBottom, slideInLeft, fadeIn
+    ]
 })
 export class SliderComponent {
-    @Input() contentType: string = "" 
+    constructor(private cdr: ChangeDetectorRef) {}
+  
+    slideInBottomText = false
+    slideLeftAnimation = false
+    fadeIn = false
+
+    @Input() contentType: string = ""
+    
+    onSliderInView() {
+        this.slideInBottomText = true
+        this.cdr.detectChanges()
+    }
+    onHeadInView() {
+        this.slideLeftAnimation = true
+        this.cdr.detectChanges()
+    }
+    onFadeInInView() {
+        this.fadeIn = true
+        this.cdr.detectChanges()
+    }
 
     posts = [
         {  num: 1, title: "assets/images/Adobe_Photoshop_Lightroom_.png" },
@@ -20,8 +43,6 @@ export class SliderComponent {
     slideRight = false;
     intervalId: any;
 
-    constructor() {}
-  
     ngOnInit() {
         if (this.posts.length % 2 === 0) {
             this.posts.pop()
