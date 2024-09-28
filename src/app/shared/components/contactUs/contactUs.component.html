@@ -1,7 +1,7 @@
 <div class="mt-5 bg-[rgb(15,7,21)] w-full py-5 px-5 text-[rgb(255,255,255)] flex flex-col gap-2 items-center">
     <div class="text-[3.5rem] sm_max:text-[3rem]" [@slideInLeft]="slideLeftAnimation ? 'visible' : 'hidden'" (inView)="onHeadInView()" inView><b>Contact {{ info }}</b></div>
     <div class="flex justify-center w-[95%]" [@slideInBottom]="slideInBottomText ? 'visible' : 'hidden'" (inView)="onSliderInView()" inView>Questions, Doubts or Comments? Feel free to write here. We'd love to hear from you</div>
-    <div class="flex flex-col items-center gap-2 w-full pt-5" [@slideInBottom]="slideInBottomText ? 'visible' : 'hidden'" (inView)="onSliderInView()" inView>
+    <div class="flex flex-col items-center gap-2 w-full pt-5" [@fadeIn]="slideInBottomText ? 'visible' : 'hidden'" (inView)="onSliderInView()" inView>
         <div class="flex gap-2 items-center w-[95%] max-w-[30rem]">
             <input type="text" placeholder="Name" class="w-full border border-[rgb(49,20,71)] outline-none rounded-md px-3 focus:bg-[rgb(24,11,34)] py-1 bg-[rgb(15,7,21)] text-[rgb(255,255,255)]">
         </div>

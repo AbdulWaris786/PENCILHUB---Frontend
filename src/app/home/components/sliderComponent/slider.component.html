@@ -7,7 +7,7 @@
     ><b>Recent {{ contentType }}</b></div>
     <div 
         class="flex gap-10 items-center justify-center overflow-hidden"
-        [@slideInBottom]="slideInBottomText ? 'visible' : 'hidden'"
+        [@fadeIn]="slideInBottomText ? 'visible' : 'hidden'"
         (inView)="onSliderInView()"
         inView
     >

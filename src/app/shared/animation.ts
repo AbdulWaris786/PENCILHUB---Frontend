@@ -3,14 +3,14 @@ import { animate, state, style, transition, trigger } from "@angular/animations"
 export const slideInLeft = trigger("slideInLeft", [
     state('hidden', style({
         opacity: 0,
-        transform: 'translateX(-100%)'
+        transform: 'translateX(-30px)'
     })),
     state('visible', style({
         opacity: 1,
         transform : "translateX(0)"
     })),
     transition('hidden => visible', [
-        animate('1s ease-out')
+        animate('.7s .5s ease-out')
     ])
 ])
 
@@ -45,11 +45,12 @@ export const slideInRight = trigger("slideInRight", [
 export const fadeIn = trigger("fadeIn", [
     state("hidden", style({
         opacity : 0,
+        transform : 'scale(.98)'
     })),
     state("visible", style({
         opacity : 1,
     })),
     transition('hidden => visible', [
-        animate('.7s .5s ease-in')
+        animate('.7s .3s ease-in')
     ]),
 ])

@@ -12,79 +12,80 @@ import { fadeIn, slideInBottom, slideInLeft, slideInRight } from "src/app/shared
       trigger('slideFromCenterAE', [
         state('hidden', style({
           opacity: 0,
-          transform: 'translate(10rem, -7rem)'
+          transform: 'translate(7rem, 1rem) rotate(75deg)'
+          
         })),
         state('visible', style({
           opacity: 1,
           transform: '*'
         })),
         transition('hidden => visible', [
-          animate('1.2s 1.2s ease-out')
+          animate('.5s 1s ease-out')
         ])
       ]),
       trigger('slideFromCenterPS', [
         state('hidden', style({
           opacity: 0,
-          transform: 'translate(10rem, -7rem)'
+          transform: 'translate(4rem, 5rem) rotate(90deg)'  
         })),
         state('visible', style({
           opacity: 1,
           transform: '*'
         })),
         transition('hidden => visible', [
-          animate('1s 1s ease-out')
+          animate('.4s 1s ease-out')
         ])
       ]),
       trigger('slideFromCenterME', [
         state('hidden', style({
           opacity: 0,
-          transform: 'translate(10rem, 3rem)'
+          transform: 'translate(4rem, 9rem) rotate(70deg)' 
         })),
         state('visible', style({
           opacity: 1,
           transform: '*'
         })),
         transition('hidden => visible', [
-          animate('1s 1s ease-out')
+          animate('.7s 1s ease-out')
         ])
       ]),
       trigger('slideFromCenterLR', [
         state('hidden', style({
           opacity: 0,
-          transform: 'translate(-7rem, 5rem)'
+          transform: 'translate(-5rem, 12rem) rotate(-900deg)' 
         })),
         state('visible', style({
           opacity: 1,
           transform: '*'
         })),
         transition('hidden => visible', [
-          animate('1s 1s ease-out')
+          animate('.7s 1s ease-out')
         ])
       ]),
       trigger('slideFromCenterAA', [
         state('hidden', style({
           opacity: 0,
-          transform: 'translate(-7rem, -2rem)'
+          transform: 'translate(-7rem, 5rem) rotate(-90deg)' 
         })),
         state('visible', style({
           opacity: 1,
           transform: '*'
         })),
         transition('hidden => visible', [
-          animate('1s 1s ease-out')
+          animate('.5s 1s ease-out')
         ])
       ]),
       trigger('slideFromCenterAP', [
         state('hidden', style({
           opacity: 0,
-          transform: 'translate(-11rem, -7rem)'
+          transform: 'translate(-7rem, 1rem) rotate(-70deg)'
         })),
         state('visible', style({
           opacity: 1,
           transform: '*'
         })),
         transition('hidden => visible', [
-          animate('1.2s 1.2s ease-out')
+          animate('.4s 1s ease-out') 
         ])
       ])
     ]
