@@ -13,6 +13,7 @@ module.exports = {
         'adobe-premiere':'url(/assets/images/adobe-premiere-pro-.png)',
         'light-room' :'url(/assets/images/pngwing.com.png)',
         'after-effect':'url(/assets/images/aftereffect.png)',
+        'sub_bg':'url(/assets/images/istockphoto-972908868-612x612.jpg)',
       },
       screens: {
         "xs" : "390px",

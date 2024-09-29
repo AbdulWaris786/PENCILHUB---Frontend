@@ -1,0 +1,18 @@
+<div class="h-auto w-full flex flex-col sm:flex-row items-center pt-3 sm:pt-1 sm:bg-layer-one-backround bg-cover bg-center bg-no-repeat text-white">
+    <div id="text_div" class="pt-2 sm:w-1/2 md:pl-[5%] gap-3 flex justify-end" >
+        <div inView (inView)="onSlideIn()" [@slideInLeft]="slideInView ? 'visible' : 'hidden'">
+            <div class=" text-center sm:text-center md:text-start max-w-[20rem] text-[2.3rem]">
+                <b><i>PROFESSIONAL VIDEO EDITOR</i></b>
+            </div>
+            <div class="text-center sm:text-center md:text-start text-[1.05rem]">
+                MUHAMMED MIKDAD MK
+            </div>
+        </div>
+    </div>
+    <div class="w-full sm:w-1/2  flex justify-center sm:justify-start bg-layer-one-backround sm:bg-none bg-contain bg-center bg-no-repeat" inView (inView)="onFadeIn()" [@fadeIMG]="slideInView ? 'visible' : 'hidden'">
+        <!-- <div class="bg-yellow-300 w-full max-w-[25rem] lg:max-w-[34rem] h-[20rem] lg:h-[22rem] px-12 pt-14"> -->
+            <img src="/assets/images/my-photo-protfolio.png" alt="" class="w-[80%] max-w-[20rem] lg:max-w-[23rem]  h-[90%] lg:h-[100%]">
+        <!-- </div> -->
+    </div>
+</div>
+

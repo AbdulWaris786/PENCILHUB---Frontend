@@ -1,17 +1,30 @@
 <div class="bg-[rgb(15,7,21)] w-full px-5 py-5 flex flex-col items-center gap-[1.5rem] text-[rgb(255,255,255)] overflow-hidden">
-    <div class="text-[3.5rem] sm_max:text-[3rem]"><b>Recent {{ contentType }}</b></div>
-    <div class="flex gap-10 items-center justify-center overflow-hidden">
+    <div 
+        class="text-[3.5rem] sm_max:text-[3rem]"
+        [@slideInLeft]="slideLeftAnimation ? 'visible' : 'hidden'"
+        (inView)="onHeadInView()"
+        inView
+    ><b>Recent {{ contentType }}</b></div>
+    <div 
+        class="flex gap-10 items-center justify-center overflow-hidden"
+        [@fadeIn]="slideInBottomText ? 'visible' : 'hidden'"
+        (inView)="onSliderInView()"
+        inView
+    >
         <button *ngIf="contentType === 'Post'" (click)="previous()" class="text-[2rem] text-gray-500 rounded-lg active:scale-95">
             <i class="fa-solid fa-angle-left"></i>
         </button>
         <div class="flex items-center justify-center w-[59rem] lg_max:w-[45rem] md_max:w-[38rem] overflow-hidden slider_container" >
             <div class="slider-container">
                 <div
-                    *ngFor="let post of posts"
+                    *ngFor="let post of posts ? posts : []"
                     class="post-card rounded-md"
                     [ngClass]="{ 'slide-left': slideLeft, 'slide-right': slideRight }">
-                    <img [src]="" alt="">
-                    {{post.num}}
+                    <img *ngIf="contentType === 'Post'" [src]="post" class="w-full h-full rounded-md" alt="">
+                    <!-- <video *ngIf="contentType === 'Video'" controls class="w-full h-full rounded-md"> -->
+                        <!-- <source [src]="post" type="video/mp4"> -->
+                        <img *ngIf="contentType === 'Video'" [src]="post" class="w-full h-full rounded-md" alt="">
+                    <!-- </video> -->
                 </div>
             </div>
         </div>
@@ -19,8 +32,15 @@
             <i class="fa-solid fa-angle-right"></i>
         </button>
     </div>
-    <div class="">
-        <button *ngIf="contentType === 'Post'" class="px-4 py-1 flex text-[rgb(255,255,255)] text-[1.5rem] rounded-lg bg-[rgb(126,74,231)] active:scale-95 ease-in-out transition">
+    <div 
+        [@fadeIn]="fadeIn ? 'visible' : 'hidden'"
+        (inView)="onFadeInInView()"
+        inView>
+        <button 
+            *ngIf="contentType === 'Post'" 
+            class="px-4 py-1 flex text-[rgb(255,255,255)] text-[1.5rem] rounded-lg bg-[rgb(126,74,231)] active:scale-95 ease-in-out transition"
+            
+        >
             <b>More Post</b>
         </button>
     </div>

@@ -1,56 +1,38 @@
-<!-- 
-<div class="h-[800px] md:h-[650px] overflow-hidden w-screen  md:w-lvw bg-layer-one-backround bg-no-repeat bg-cover flex flex-col  md:flex-row">
-    <div class="h-[100%] w-[45%] px-[270px] py-[150px]">
-        <div class="h-[100px] md:w-[300px] ">
-            <img src="/assets/images/Screenshot_2024-08-17_163937-removebg-preview.png" alt="" class="h-[100px] w-[100%]">
-        </div>
-        <div class="h-[100px] w-[420px] py-[20px] px-[20px]">
-            <h1 class="text-white text-start text-[20px] font-sans">Join us to master video and photo editing, from basics to pro-level <br>Let's create something amazing together!</h1>
-        </div>
-        <div class="py-[20px] px-[20px]">
-            <button class="h-[40px] w-[210px] bg-[rgb(132,78,242)] text-white text-center rounded-[8px] text-[20px] font-serif">Join us on YouTube!</button>
-        </div>
-    </div>
-    <div class="h-[100%] w-[43%] relative ">
-        <div class="h-[80px] w-[80px] bg-adobe-audition bg-contain bg-center bg-no-repeat absolute left-[130px] top-[50px] rotate-[-20deg]"></div>
-        <div class="h-[100px] w-[100px] bg-light-room bg-contain bg-center bg-no-repeat absolute left-[400px] top-[30px] rotate-[30deg]"></div>
-        <div class="h-[80px] w-[80px] bg-adobe-media-encounder bg-contain bg-center bg-no-repeat absolute left-[80px] top-[190px] rotate-[-40deg]"></div>
-        <img src="/assets/images/Layer-21.png" alt="" class="my-[40px] absolute">
-        <div class="h-[80px] w-[80px] bg-after-effect bg-contain bg-center bg-no-repeat absolute left-[450px] top-[170px] rotate-[15deg]"></div>
-        <div class="h-[150px] w-[150px] bg-adobe-photoshop bg-contain bg-center bg-no-repeat absolute top-[290px]"></div>
-        <div class="h-[100px] w-[100px] bg-adobe-premiere bg-contain bg-center bg-no-repeat absolute left-[500px] top-[300px] rotate-[7deg]"></div>
-    </div>
-</div>  
 
-<img src="/assets/images/aftereffect.png" alt="" class="h-[3rem] w-[3rem] rotate-[-10deg] absolute top-[50%] left-[8%]">
-
--->
-
-
-
-<div class="h-auto w-full flex flex-col sm:flex-row items-center py-3 sm:bg-layer-one-backround bg-cover bg-center bg-no-repeat">
-    <div id="text_div" class="py-2 sm:w-1/2 md:pl-[5%] lg:flex flex-col items-end">
-        <div class="max-w-[30rem]">
-            <img src="/assets/images/Screenshot_2024-08-17_163937-removebg-preview.png" alt="" class="pl-16 pr-24 py-1">
+<div 
+    (inView)="onBannerTextInView()"
+    inView class="h-auto w-full flex flex-col sm:flex-row items-center py-3 sm:bg-layer-one-backround bg-cover bg-center bg-no-repeat"
+>
+    <div 
+        id="text_div" 
+        class="py-2 sm:w-1/2 md:pl-[5%] lg:flex flex-col items-end gap-3" 
+    >
+        <div class="max-w-[34rem] flex justify-start sm:pr-10" [@fadeIn]="slideInLeftText ? 'visible' : 'hidden'">
+            <img src="/assets/images/Screenshot_2024-08-17_163937-removebg-preview.png" alt="" class="pl-16 lg:pl-8 pr-24 py-1">
         </div>
         <div class="">
-            <div class="py-2 px-10 text-white text-start font-sans">
+            <div class="py-2 px-10 text-white text-center sm:text-start font-sans" [@slideInLeft]="slideInLeftText ? 'visible' : 'hidden'">
                 Join us to master video and photo editing, from basics to pro-level <br>Let's create something amazing together!
             </div>
             <div class="w-full flex justify-center sm:justify-start pt-2 sm:px-10">
-                <button class="bg-[rgb(132,78,242)] text-white text-center rounded-[8px] text-[20px] font-serif px-5 py-1 transition ease-in-out active:scale-[.98]">Join us on YouTube!</button>
+                <button [@fadeIn]="slideInLeftText ? 'visible' : 'hidden'" class="bg-[rgb(132,78,242)] text-white text-center rounded-[8px] text-[20px] font-serif px-5 py-1 transition ease-in-out active:scale-[.98]">Join us on YouTube!</button>
             </div>
         </div>
     </div>
-    <div id="img_div" class="w-full sm:w-1/2 pt-10 pb-5 flex justify-center bg-layer-one-backround sm:bg-none bg-contain bg-center bg-no-repeat lg:flex lg:justify-start">
-        <div class="w-full max-w-[25rem] lg:max-w-[34rem] h-[20rem] lg:h-[22rem] px-12 pt-14 relative">
-            <div class="bg-after-effect bg-contain bg-center bg-no-repeat h-[3rem] lg:h-[3.5rem] w-[3rem] lg:w-[3.5rem] rotate-[-10deg] absolute top-[51%] lg:top-[53%] left-[7%] lg:left-[12%]"></div>
-            <div class="bg-adobe-photoshop bg-contain bg-center bg-no-repeat h-[4.5rem] lg:h-[5.5rem] w-[4.5rem] lg:w-[5.5rem] rotate-[-10deg] absolute top-[28%] lg:top-[25%] left-[14%] lg:left-[19%]"></div>
-            <div class="bg-adobe-media-encounder bg-contain bg-center bg-no-repeat h-[3rem] lg:h-[3.5rem] w-[3rem] lg:w-[3.5rem] rotate-[-10deg] absolute top-[9%] lg:top-[5%] left-[20%] lg:left-[24%]"></div>
-            <div class="bg-light-room bg-contain bg-center bg-no-repeat h-[3rem] lg:h-[4rem] w-[3rem] lg:w-[4rem] rotate-[15deg] absolute top-[3%] lg:top-0 right-[28%] lg:right-[30%]"></div>
-            <div class="bg-adobe-audition bg-contain bg-center bg-no-repeat h-[3rem] lg:h-[3.5rem] w-[3rem] lg:w-[3.5rem] rotate-[10deg] absolute top-[30%] lg:top-[26%] right-[24%] lg:right-[27%]"></div>
-            <div class="bg-adobe-premiere bg-contain bg-center bg-no-repeat h-[4rem] lg:h-[4.7rem] w-[4rem] lg:w-[4.7rem] rotate-[15deg] absolute top-[45%] lg:top-[47%] right-[10%] lg:right-[14%]"></div>
-            <img src="/assets/images/Layer-21.png" alt="" class="absolute w-[80%] max-w-[20rem] lg:max-w-[23rem]  h-[90%] lg:h-[100%] top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]">
+    <div 
+        id="img_div" 
+        (inView)="onBannerImageInView()"
+        inView 
+        class="w-full sm:w-1/2 pt-10 pb-5 flex justify-center bg-layer-one-backround sm:bg-none bg-contain bg-center bg-no-repeat lg:flex lg:justify-start"
+    >
+        <div class="w-full max-w-[25rem] lg:max-w-[34rem] h-[20rem] lg:h-[22rem] px-12 pt-14 relative" [@scale]="slideInLeftText ? 'visible' : 'hidden'">
+            <div [@slideFromCenterAE]="showElements ? 'visible' : 'hidden'" class="bg-after-effect bg-contain bg-center bg-no-repeat h-[3rem] lg:h-[3.5rem] w-[3rem] lg:w-[3.5rem] rotate-[-10deg] absolute top-[63%] lg:top-[56%] left-[7%] lg:left-[12%]"></div>
+            <div [@slideFromCenterPS]="showElements ? 'visible' : 'hidden'" class="bg-adobe-photoshop bg-contain bg-center bg-no-repeat h-[4.5rem] lg:h-[5.5rem] w-[4.5rem] lg:w-[5.5rem] rotate-[-10deg] absolute top-[38%] lg:top-[32%] left-[14%] lg:left-[19%]"></div>
+            <div [@slideFromCenterME]="showElements ? 'visible' : 'hidden'" class="bg-adobe-media-encounder bg-contain bg-center bg-no-repeat h-[3rem] lg:h-[3.5rem] w-[3rem] lg:w-[3.5rem] rotate-[-10deg] absolute top-[24%] lg:top-[8%] left-[18%] lg:left-[24%]"></div>
+            <div [@slideFromCenterLR]="showElements ? 'visible' : 'hidden'" class="bg-light-room bg-contain bg-center bg-no-repeat h-[3rem] lg:h-[4rem] w-[3rem] lg:w-[4rem] rotate-[15deg] absolute top-[16%] lg:top-[3%] right-[28%] lg:right-[30%]"></div>
+            <div [@slideFromCenterAA]="showElements ? 'visible' : 'hidden'" class="bg-adobe-audition bg-contain bg-center bg-no-repeat h-[3rem] lg:h-[3.5rem] w-[3rem] lg:w-[3.5rem] rotate-[18deg] absolute top-[45%] lg:top-[32%] right-[24%] lg:right-[27%]"></div>
+            <div [@slideFromCenterAP]="showElements ? 'visible' : 'hidden'" class="bg-adobe-premiere bg-contain bg-center bg-no-repeat h-[4rem] lg:h-[4.7rem] w-[4rem] lg:w-[4.7rem] rotate-[15deg] absolute top-[58%] lg:top-[52%] right-[9%] lg:right-[14%]"></div>
+            <img src="/assets/images/Layer-21.png" alt="" class="absolute w-[80%] max-w-[20rem] lg:max-w-[23rem]  h-[90%] lg:h-[100%] top-1/2 left-1/2 translate-x-[-50%] translate-y-[-33%] lg:translate-y-[-41%]">
         </div>
     </div>
 </div>

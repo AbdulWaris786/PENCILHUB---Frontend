@@ -6,21 +6,21 @@ import { SharedModule } from "../shared/shared.module";
 import { WorkedCompaniesComponent } from "./components/workedCompanies/workedCompanies.component";
 import { ShowReelComponent } from "./components/showReel/showReel.component";
 import { CommonModule } from "@angular/common";
-import { inViewDirective } from "../shared/in-view.directive";
+import { BannerComponent } from "./components/banner/banner.component";
 
 @NgModule({
     declarations: [
         MainPagePortfolio,
         RecentWorksComponent,
         WorkedCompaniesComponent,
-        ShowReelComponent,
-        inViewDirective
+        ShowReelComponent,  
+        BannerComponent
     ],
     imports: [
         HomeModule,
         SharedModule,
         CommonModule,
-        
+        SharedModule
     ],
     exports: [
         MainPagePortfolio

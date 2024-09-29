@@ -1,46 +1,122 @@
-import { Component, HostListener, OnInit } from "@angular/core";
-import * as AOS from 'aos'
+import { animate, state, style, transition, trigger } from "@angular/animations";
+import { ChangeDetectorRef, Component } from "@angular/core";
+import { fadeIn, slideInBottom, slideInLeft } from "src/app/shared/animation";
 
 @Component({
     selector : "app-layer-one",
     templateUrl : "./layerone.conponent.html",
-    styleUrls:['./layerone.conponent.css']
-})
-export class LayerOneComponent implements OnInit{
-    ngOnInit(){
-        AOS.init({
-            duration: 1200, // Animation duration
-            once: true, // Whether animation should happen only once - while scrolling down
-            mirror: false, // Whether elements should animate out while scrolling past them
-            easing: 'ease-out-back' // Easing function applied to animations
-          });
-          console.log('AOS Ini');
+    styleUrls : ['./layerone.conponent.css'],
+    animations : [
+      slideInBottom, slideInLeft, fadeIn,
+      trigger('slideFromCenterAE', [
+        state('hidden', style({
+          opacity: 0,
+          transform: 'translate(7rem, 1rem) rotate(75deg)'
           
-          AOS.refresh();
-    }
-    lastScrollY: number = 0;
+        })),
+        state('visible', style({
+          opacity: 1,
+          transform: '*'
+        })),
+        transition('hidden => visible', [
+          animate('.5s .3s ease-out')
+        ])
+      ]),
+      trigger('slideFromCenterPS', [
+        state('hidden', style({
+          opacity: 0,
+          transform: 'translate(4rem, 5rem) rotate(90deg)'  
+        })),
+        state('visible', style({
+          opacity: 1,
+          transform: '*'
+        })),
+        transition('hidden => visible', [
+          animate('.4s .3s ease-out')
+        ])
+      ]),
+      trigger('slideFromCenterME', [
+        state('hidden', style({
+          opacity: 0,
+          transform: 'translate(4rem, 9rem) rotate(70deg)' 
+        })),
+        state('visible', style({
+          opacity: 1,
+          transform: '*'
+        })),
+        transition('hidden => visible', [
+          animate('.7s .3s ease-out')
+        ])
+      ]),
+      trigger('slideFromCenterLR', [
+        state('hidden', style({
+          opacity: 0,
+          transform: 'translate(-5rem, 12rem) rotate(-900deg)' 
+        })),
+        state('visible', style({
+          opacity: 1,
+          transform: '*'
+        })),
+        transition('hidden => visible', [
+          animate('.7s .3s ease-out')
+        ])
+      ]),
+      trigger('slideFromCenterAA', [
+        state('hidden', style({
+          opacity: 0,
+          transform: 'translate(-7rem, 5rem) rotate(-90deg)' 
+        })),
+        state('visible', style({
+          opacity: 1,
+          transform: '*'
+        })),
+        transition('hidden => visible', [
+          animate('.5s .3s ease-out')
+        ])
+      ]),
+      trigger('slideFromCenterAP', [
+        state('hidden', style({
+          opacity: 0,
+          transform: 'translate(-7rem, 1rem) rotate(-70deg)'
+        })),
+        state('visible', style({
+          opacity: 1,
+          transform: '*'
+        })),
+        transition('hidden => visible', [
+          animate('.4s .3s ease-out') 
+        ])
+      ]),
+      trigger('scale', [
+        state('hidden', style({
+          transform: 'scale(.98)'
+        })),
+        state('visible', style({
+          transform: '*'
+        })),
+        transition('hidden => visible', [
+          animate('.3s ease-out') 
+        ])
+      ])
+    ]
+})
+export class LayerOneComponent {
+  constructor(private cdr: ChangeDetectorRef) {}
+  slideInLeftText: boolean = false
+  showButton: boolean = false
+  showMainImage: boolean = false
+  showElements: boolean = false
 
-    @HostListener('window:scroll', ['$event'])
-    onScroll(event: Event): void {
-    const animatedDivs = document.querySelectorAll('.scroll-animated') as NodeListOf<HTMLElement>;
-    const scrollY = window.scrollY;
-    const viewportHeight = window.innerHeight;
-
-    animatedDivs.forEach((div) => {
-      // Calculate the movement based on the scroll position
-      const movement = (scrollY % viewportHeight) / viewportHeight * 200;
-
-      // Check scroll direction and move the div
-      if (scrollY > this.lastScrollY) {
-        // Scrolling down, move right
-        div.style.transform = `translateX(${movement}px)`;
-      } else {
-        // Scrolling up, move left
-        div.style.transform = `translateX(-${movement}px)`;
-      }
-    });
-
-    // Update last scroll position
-    this.lastScrollY = scrollY;
+  onBannerTextInView() {
+    this.slideInLeftText = true
+    this.showButton = true
+    this.cdr.detectChanges()
   }
+
+  onBannerImageInView() {
+    this.showElements = true
+    this.showMainImage = true
+    this.cdr.detectChanges()
+  }
+
 }
