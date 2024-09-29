@@ -1,9 +1,9 @@
 <div class="bg-[rgba(15,7,21,0)] w-full px-5 py-5 flex flex-col items-center gap-[1.5rem] text-[rgb(255,255,255)]"  (inView)="onSliderInView()" inView>
     <div class="flex items-center justify-center text-[2.3rem] w-full text-center" [@slideInLeft]="slideLeftAnimation ? 'visible' : 'hidden'"><b>Worked Companies</b></div>
-    <div class="gap-10 flex max-w-[15rem] sm:max-w-[33rem] xl:max-w-[50rem] overflow-auto" [@slideInBottom]="slideInBottomText ? 'visible' : 'hidden'">
-        <div class="h-[15rem] min-w-[15rem] bg-green-400 rounded-full"></div>
-        <div class="h-[15rem] min-w-[15rem] bg-green-400 rounded-full"></div>
-        <div class="h-[15rem] min-w-[15rem] bg-green-400 rounded-full"></div>
+    <div class="gap-10 flex max-w-[15rem] sm:max-w-[33rem] xl:max-w-[50rem] overflow-auto" [@fadeIn]="slideInBottomText ? 'visible' : 'hidden'">
+        <div class="h-[15rem] min-w-[15rem] bg-green-400 rounded-full bg-cover bg-no-repeat" style="background-image: url(/assets/images/works/EP7.png);"></div>
+        <div class="h-[15rem] min-w-[15rem] bg-green-400 rounded-full bg-center bg-cover bg-no-repeat" style="background-image: url(assets/images/works/ep12cc.png);"></div>
+        <div class="h-[15rem] min-w-[15rem] bg-green-400 rounded-full bg-center bg-cover bg-no-repeat" style="background-image: url(assets/images/works/video-editing-pc-&laptop-tumb.png);"></div>
     </div>
 </div>
 

@@ -1,15 +1,28 @@
 <div class="bg-sub_bg bg-cover sm:bg-contain bg-no-repeat bg-center">
     <div class="opacity-95 backdrop-blur-3xl w-full px-8 py-5 flex flex-col items-center gap-[1.5rem] text-[rgb(255,255,255)] overflow-hidden">
         <div class="text-[2.3rem]" [@slideInLeft]="slideAnimation ? 'visible' : 'hidden'" (inView)="onSliderInView()" inView>
-            <b>What We Do.</b>
+            <b *ngIf="page === 'home'">What We Do.</b>
+            <b *ngIf="page === 'portfolio'"><i>YOUTUBE CONTENT CREATOR</i></b>
         </div>
-        <div [@fadeIn]="fadeAnimation ? 'visible' : 'hidden'" (inView)="onFadeInInView()" inView class="text-center px-[2%] sm:px-[10%] md:px-[15%] lg:px-[20%] xl:px-[25%] 2xl:px-[30%]">
+        <div *ngIf="page === 'home'" [@fadeIn]="fadeAnimation ? 'visible' : 'hidden'" (inView)="onFadeInInView()" inView class="text-center px-[2%] sm:px-[10%] md:px-[15%] lg:px-[20%] xl:px-[25%] 2xl:px-[30%]">
             Welcome to our channel! We're here to help you
             master video and photo editing, photography, videography, and poster design.
             From beginners to advanced users, we provide creative and detailed  tutorials
             to elavate your skills. Explore everything from basic techniques to advanced methods
             and unlock your full creative potential with us.
             Join our community and start creating amazing content today!
+        </div>
+        <div *ngIf="page === 'portfolio'" [@fadeIn]="fadeAnimation ? 'visible' : 'hidden'" (inView)="onFadeInInView()" inView class="text-center px-[2%] sm:px-[10%] md:px-[15%] lg:px-[20%] xl:px-[25%] 2xl:px-[30%]">
+            Crafted and edited visually compelling videos for the 
+            PencilHub YouTube Channel,
+            which boasts {{ finalSubscribersCount }} , {{ totalViews }} views, 
+            and a content library of {{ totalVideos }} videos.
+            Utilized Adobe Premiere Pro for video editing,
+            After Effects for dynamic animations,
+            and Photoshop for creating engaging thumbnails.
+            Implemented strategic channel scheduling 
+            and optimization to enhance audience 
+            engagement and foster channel grownth.
         </div>
         <div class="flex gap-3 items-center" [@fadeIn]="fadeAnimation ? 'visible' : 'hidden'" (inView)="onFadeInInView()" inView>
             <div class="w-[4rem] h-[4rem] rounded-full">

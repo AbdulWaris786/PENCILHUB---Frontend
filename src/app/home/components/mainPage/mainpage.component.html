@@ -1,8 +1,8 @@
 <div class="h-[auto] w-[100vw] dark:bg-custom-gradient">
     <app-header></app-header>
     <app-layer-one></app-layer-one>
-    <app-livesub></app-livesub>
-    <slider-component contentType="Post"></slider-component>
-    <slider-component contentType="Video"></slider-component>
+    <app-livesub page="home"></app-livesub>
+    <slider-component [posts]="posts" contentType="Post"></slider-component>
+    <slider-component [posts]="videos" contentType="Video"></slider-component>
     <contact-us-component info="Us"></contact-us-component>
 </div>

@@ -4,4 +4,7 @@ import { Component } from "@angular/core";
     selector : "app-portfolio-page",
     templateUrl : "./mainpage.component.html"
 })
-export class MainPagePortfolio {} 
+export class MainPagePortfolio {
+    totalVideos: number = 245
+    views: string = "3.6 million"
+} 

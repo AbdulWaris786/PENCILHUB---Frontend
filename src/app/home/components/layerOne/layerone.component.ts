@@ -1,14 +1,13 @@
 import { animate, state, style, transition, trigger } from "@angular/animations";
-import { ChangeDetectorRef, Component, OnInit } from "@angular/core";
-import * as AOS from 'aos'
-import { fadeIn, slideInBottom, slideInLeft, slideInRight } from "src/app/shared/animation";
+import { ChangeDetectorRef, Component } from "@angular/core";
+import { fadeIn, slideInBottom, slideInLeft } from "src/app/shared/animation";
 
 @Component({
     selector : "app-layer-one",
     templateUrl : "./layerone.conponent.html",
     styleUrls : ['./layerone.conponent.css'],
     animations : [
-      slideInBottom, slideInLeft, slideInRight, fadeIn,
+      slideInBottom, slideInLeft, fadeIn,
       trigger('slideFromCenterAE', [
         state('hidden', style({
           opacity: 0,
@@ -20,7 +19,7 @@ import { fadeIn, slideInBottom, slideInLeft, slideInRight } from "src/app/shared
           transform: '*'
         })),
         transition('hidden => visible', [
-          animate('.5s 1s ease-out')
+          animate('.5s .3s ease-out')
         ])
       ]),
       trigger('slideFromCenterPS', [
@@ -33,7 +32,7 @@ import { fadeIn, slideInBottom, slideInLeft, slideInRight } from "src/app/shared
           transform: '*'
         })),
         transition('hidden => visible', [
-          animate('.4s 1s ease-out')
+          animate('.4s .3s ease-out')
         ])
       ]),
       trigger('slideFromCenterME', [
@@ -46,7 +45,7 @@ import { fadeIn, slideInBottom, slideInLeft, slideInRight } from "src/app/shared
           transform: '*'
         })),
         transition('hidden => visible', [
-          animate('.7s 1s ease-out')
+          animate('.7s .3s ease-out')
         ])
       ]),
       trigger('slideFromCenterLR', [
@@ -59,7 +58,7 @@ import { fadeIn, slideInBottom, slideInLeft, slideInRight } from "src/app/shared
           transform: '*'
         })),
         transition('hidden => visible', [
-          animate('.7s 1s ease-out')
+          animate('.7s .3s ease-out')
         ])
       ]),
       trigger('slideFromCenterAA', [
@@ -72,7 +71,7 @@ import { fadeIn, slideInBottom, slideInLeft, slideInRight } from "src/app/shared
           transform: '*'
         })),
         transition('hidden => visible', [
-          animate('.5s 1s ease-out')
+          animate('.5s .3s ease-out')
         ])
       ]),
       trigger('slideFromCenterAP', [
@@ -85,7 +84,18 @@ import { fadeIn, slideInBottom, slideInLeft, slideInRight } from "src/app/shared
           transform: '*'
         })),
         transition('hidden => visible', [
-          animate('.4s 1s ease-out') 
+          animate('.4s .3s ease-out') 
+        ])
+      ]),
+      trigger('scale', [
+        state('hidden', style({
+          transform: 'scale(.98)'
+        })),
+        state('visible', style({
+          transform: '*'
+        })),
+        transition('hidden => visible', [
+          animate('.3s ease-out') 
         ])
       ])
     ]

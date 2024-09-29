@@ -17,10 +17,12 @@ export class SliderComponent {
     fadeIn = false
 
     @Input() contentType: string = ""
+    @Input() posts: any[] = [];
     
     onSliderInView() {
         this.slideInBottomText = true
         this.cdr.detectChanges()
+        this.startAutoSlide();
     }
     onHeadInView() {
         this.slideLeftAnimation = true
@@ -30,14 +32,6 @@ export class SliderComponent {
         this.fadeIn = true
         this.cdr.detectChanges()
     }
-
-    posts = [
-        {  num: 1, title: "assets/images/Adobe_Photoshop_Lightroom_.png" },
-        {  num: 2, title: "assets/images/adobe-photoshop.png" },
-        {  num: 3, title: "assets/images/adobe-premiere-pro-.png" },
-        {  num: 4, title: "assets/images/Adobe_Audition.png" },
-        {  num: 5, title: "assets/images/Layer-21.png" },
-    ];
     
     slideLeft = false;
     slideRight = false;
@@ -48,7 +42,6 @@ export class SliderComponent {
             this.posts.pop()
         }
         this.centerFirstItem();
-        this.startAutoSlide();
     }
   
     ngOnDestroy() {

@@ -6,7 +6,7 @@ import { gsap } from 'gsap';
     templateUrl : "./recentworks.component.html"
 })
 export class RecentWorksComponent implements OnInit, AfterViewInit {
-    contents: Array<string> = ["c-1", "c-2", "c-3", "c-4", "c-5", "c-6"]
+    contents: Array<string> = ["assets/images/works/Ae transition 1tumb .png", "assets/images/works/EP10.png", "assets/images/works/ep12cc.png", "assets/images/works/EP7.png", "assets/images/works/video-editing-pc-&laptop-tumb.png", "assets/images/works/video-editing-pc-&laptop-tumb.png"]
     visibleContents: Array<string> = []
 
     @ViewChild("heading") heading!: ElementRef
@@ -48,7 +48,7 @@ export class RecentWorksComponent implements OnInit, AfterViewInit {
     animateEnter(element: HTMLElement) {
         gsap.from(element, {
             opacity : 0,
-            y : 30,
+            scale : .95,
             duration : 2,
             ease : "power4.inOut",
             stagger: 0.5
@@ -57,19 +57,11 @@ export class RecentWorksComponent implements OnInit, AfterViewInit {
 
     animateHeading(): void {
         gsap.from(this.heading.nativeElement, {
-            x : -200,
+            x : -30,
             opacity : 0,
-            duration : 1.5,
+            duration : 1,
+            delay : .5,
             ease : "power3.out"
-        })
-    }
-
-    animateLeave(element: HTMLElement) {
-        gsap.to(element, {
-            opacity : 0,
-            y : -20,
-            duration : .5,
-            ease : "power2.inOut",
         })
     }
 }

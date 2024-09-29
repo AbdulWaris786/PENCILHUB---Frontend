@@ -6,6 +6,7 @@ import { SharedModule } from "../shared/shared.module";
 import { WorkedCompaniesComponent } from "./components/workedCompanies/workedCompanies.component";
 import { ShowReelComponent } from "./components/showReel/showReel.component";
 import { CommonModule } from "@angular/common";
+import { BannerComponent } from "./components/banner/banner.component";
 
 @NgModule({
     declarations: [
@@ -13,6 +14,7 @@ import { CommonModule } from "@angular/common";
         RecentWorksComponent,
         WorkedCompaniesComponent,
         ShowReelComponent,  
+        BannerComponent
     ],
     imports: [
         HomeModule,

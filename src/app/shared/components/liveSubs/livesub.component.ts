@@ -1,25 +1,24 @@
-import { ChangeDetectorRef, Component, OnInit } from "@angular/core";
+import { ChangeDetectorRef, Component, Input, OnInit } from "@angular/core";
 import { fadeIn, slideInLeft } from "../../animation";
 
 @Component({
     selector : "app-livesub",
     templateUrl : "./livesub.component.html",
     animations : [
-        fadeIn, slideInLeft
+        fadeIn, slideInLeft,
     ]
 })
-export class LiveSubsComponent implements OnInit {
+export class LiveSubsComponent {
     slideAnimation = false
     fadeAnimation = false
     subscriberCount = 0
     finalSubscribersCount = 29516
     animationState = 'initial'
+    @Input() page: string = ""
+    @Input() totalVideos = 0
+    @Input() totalViews = ""
 
     constructor(private cdr: ChangeDetectorRef) {}
-    
-    ngOnInit() {
-        this.animateCountUp();
-    }
 
     onSliderInView() {
         this.slideAnimation = true
@@ -29,6 +28,7 @@ export class LiveSubsComponent implements OnInit {
     onFadeInInView() {
         this.fadeAnimation = true
         this.cdr.detectChanges()
+        this.animateCountUp();
     }
 
     animateCountUp() {

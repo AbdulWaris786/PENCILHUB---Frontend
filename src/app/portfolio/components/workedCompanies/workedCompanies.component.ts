@@ -1,11 +1,11 @@
 import { ChangeDetectorRef, Component } from "@angular/core";
-import { slideInBottom, slideInLeft } from "src/app/shared/animation";
+import { fadeIn, slideInLeft } from "src/app/shared/animation";
 
 @Component({
     selector : "app-worked-companies",
     templateUrl : "./workedCompanies.component.html",
     animations : [
-        slideInLeft, slideInBottom
+        slideInLeft, fadeIn
     ]
 })
 export class WorkedCompaniesComponent {

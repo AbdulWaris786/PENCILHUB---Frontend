@@ -17,11 +17,14 @@
         <div class="flex items-center justify-center w-[59rem] lg_max:w-[45rem] md_max:w-[38rem] overflow-hidden slider_container" >
             <div class="slider-container">
                 <div
-                    *ngFor="let post of posts"
+                    *ngFor="let post of posts ? posts : []"
                     class="post-card rounded-md"
                     [ngClass]="{ 'slide-left': slideLeft, 'slide-right': slideRight }">
-                    <img [src]="" alt="">
-                    {{post.num}}
+                    <img *ngIf="contentType === 'Post'" [src]="post" class="w-full h-full rounded-md" alt="">
+                    <!-- <video *ngIf="contentType === 'Video'" controls class="w-full h-full rounded-md"> -->
+                        <!-- <source [src]="post" type="video/mp4"> -->
+                        <img *ngIf="contentType === 'Video'" [src]="post" class="w-full h-full rounded-md" alt="">
+                    <!-- </video> -->
                 </div>
             </div>
         </div>

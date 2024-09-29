@@ -2,7 +2,7 @@ import { animate, state, style, transition, trigger } from "@angular/animations"
 
 export const slideInLeft = trigger("slideInLeft", [
     state('hidden', style({
-        opacity: 0,
+        opacity: .15,
         transform: 'translateX(-30px)'
     })),
     state('visible', style({
@@ -10,7 +10,7 @@ export const slideInLeft = trigger("slideInLeft", [
         transform : "translateX(0)"
     })),
     transition('hidden => visible', [
-        animate('.7s .5s ease-out')
+        animate('.7s ease-out')
     ])
 ])
 
@@ -28,14 +28,14 @@ export const slideInBottom = trigger("slideInBottom", [
     ])
 ])
 
-export const slideInRight = trigger("slideInRight", [
+export const fadeInIMG = trigger("fadeIMG", [
     state('hidden', style({
-        opacity: 0,
-        transform: 'translateX(100%)'
+        opacity: .5,
+        transform: 'translateX(10px) scale(.98)'
     })),
     state('visible', style({
         opacity: 1,
-        transform : "translateX(0)"
+        transform : "*"
     })),
     transition('hidden => visible', [
         animate('1s ease-out')
@@ -44,13 +44,13 @@ export const slideInRight = trigger("slideInRight", [
 
 export const fadeIn = trigger("fadeIn", [
     state("hidden", style({
-        opacity : 0,
-        transform : 'scale(.98)'
+        opacity : .1,
+        transform : 'scale(.96)'
     })),
     state("visible", style({
         opacity : 1,
     })),
     transition('hidden => visible', [
-        animate('.7s .3s ease-in')
+        animate('.7s .1s ease-out')
     ]),
 ])
