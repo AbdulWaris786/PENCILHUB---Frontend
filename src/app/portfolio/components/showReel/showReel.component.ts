@@ -1,4 +1,5 @@
 import { AfterViewInit, ChangeDetectorRef, Component, OnInit } from "@angular/core";
+import { BackendService } from "src/app/services/backend.service";
 import { fadeIn, slideInLeft } from "src/app/shared/animation";
 
 @Component({
@@ -8,11 +9,24 @@ import { fadeIn, slideInLeft } from "src/app/shared/animation";
         slideInLeft, fadeIn
     ]
 })
-export class ShowReelComponent implements AfterViewInit {
+export class ShowReelComponent implements OnInit, AfterViewInit {
     headingInView = false
     contentInView = false
+    reel: any = "assets/images/works/Ae transition 1tumb .png"
 
-    constructor(private cdr: ChangeDetectorRef) {}
+    constructor(private cdr: ChangeDetectorRef, private backendService: BackendService) {}
+
+    ngOnInit(): void {
+        // this.backendService.getShowReel().subscribe({
+        //     next: (response: any) => {
+        //         this.reel = response.reel
+        //     },
+        //     error: (respose: any) => {
+        //         console.log("failed");
+                
+        //     }
+        // })
+    }
 
     ngAfterViewInit(): void {}
 

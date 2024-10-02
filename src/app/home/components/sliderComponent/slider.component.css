@@ -13,7 +13,6 @@
 .post-card {
     min-width: 17rem;
     height: 11rem;
-    background-color: #a7f3d0; /* bg-green-200 */
     text-align: center;
     line-height: 11rem;
     transition: transform 1s ease-in-out

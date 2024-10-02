@@ -1,4 +1,5 @@
-import { ChangeDetectorRef, Component } from "@angular/core";
+import { ChangeDetectorRef, Component, OnInit } from "@angular/core";
+import { BackendService } from "src/app/services/backend.service";
 import { fadeIn, slideInLeft } from "src/app/shared/animation";
 
 @Component({
@@ -8,11 +9,24 @@ import { fadeIn, slideInLeft } from "src/app/shared/animation";
         slideInLeft, fadeIn
     ]
 })
-export class WorkedCompaniesComponent {
-    constructor(private cdr: ChangeDetectorRef) {}
+export class WorkedCompaniesComponent implements OnInit {
+    constructor(private cdr: ChangeDetectorRef, private backendService: BackendService) {}
 
     slideInBottomText = false
     slideLeftAnimation = false
+    companies: string[] = ["/assets/images/works/EP7.png", "assets/images/works/ep12cc.png", "assets/images/works/video-editing-pc-&laptop-tumb.png"]
+
+    ngOnInit(): void {
+        // this.backendService.getRecentCompanies().subscribe({
+        //     next: (response: any) => {
+        //         this.companies = response.companies
+        //     },
+        //     error: (respose: any) => {
+        //         console.log("failed");
+                
+        //     }
+        // })
+    }
 
     onSliderInView() {
         this.slideInBottomText = true
