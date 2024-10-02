@@ -1,5 +1,7 @@
 import { ChangeDetectorRef, Component, Input, OnInit } from "@angular/core";
 import { fadeIn, slideInLeft } from "../../animation";
+import { BackendService } from "src/app/services/backend.service";
+import { response } from "express";
 
 @Component({
     selector : "app-livesub",
@@ -8,7 +10,7 @@ import { fadeIn, slideInLeft } from "../../animation";
         fadeIn, slideInLeft,
     ]
 })
-export class LiveSubsComponent {
+export class LiveSubsComponent implements OnInit {
     slideAnimation = false
     fadeAnimation = false
     subscriberCount = 0
@@ -18,7 +20,18 @@ export class LiveSubsComponent {
     @Input() totalVideos = 0
     @Input() totalViews = ""
 
-    constructor(private cdr: ChangeDetectorRef) {}
+    constructor(private cdr: ChangeDetectorRef, private backendService: BackendService) {}
+
+    ngOnInit(): void {
+        // this.backendService.getSubscribers().subscribe({
+        //     next : (response: any)=>{
+        //         this.finalSubscribersCount = response.subscriberCount
+        //     },
+        //     error : (rsponse: any)=>{
+        //         window.location.reload()
+        //     },
+        // })
+    }
 
     onSliderInView() {
         this.slideAnimation = true

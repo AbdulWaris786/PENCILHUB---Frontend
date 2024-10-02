@@ -15,6 +15,7 @@ export class SliderComponent {
     slideInBottomText = false
     slideLeftAnimation = false
     fadeIn = false
+    @Input() delay: number = 2000
 
     @Input() contentType: string = ""
     @Input() posts: any[] = [];
@@ -58,7 +59,7 @@ export class SliderComponent {
     startAutoSlide() {
         this.intervalId = setInterval(() => {
             this.next();
-        }, 3000); // Auto-slide every 3 seconds
+        }, this.delay); // Auto-slide every 3 seconds
     }
   
     next() {
