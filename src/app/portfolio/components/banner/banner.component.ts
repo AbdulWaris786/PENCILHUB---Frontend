@@ -11,6 +11,7 @@ import { fadeIn, fadeInIMG, slideInLeft } from "src/app/shared/animation";
 export class BannerComponent {
     slideInView: boolean = false
     fadeInView: boolean = false
+    bannerImg = "assets/images/mainpage/my-photo-protfolio.png"
     constructor(private cdr: ChangeDetectorRef) {}
 
     onFadeIn() {

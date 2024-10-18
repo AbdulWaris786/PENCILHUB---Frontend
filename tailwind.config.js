@@ -4,16 +4,16 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage:{
-        'custom-gradient': 'linear-gradient(116deg, rgba(14,2,24,1) 66%, rgba(43,21,78,1) 100%)',
-        'layer-one-backround':'url(/assets/images/Vector-Smart-Object10.png)',
-        'layer-one-photo':'url(/assets/images/Layer-21.png)',
-        'adobe-audition':'url(/assets/images/Adobe_Audition.png)',
-        'adobe-media-encounder':'url(/assets/images/Adobe_Media_Encoder_Icon.s.png)',
-        'adobe-photoshop':'url(/assets/images/adobe-photoshop.png)',
-        'adobe-premiere':'url(/assets/images/adobe-premiere-pro-.png)',
-        'light-room' :'url(/assets/images/pngwing.com.png)',
-        'after-effect':'url(/assets/images/aftereffect.png)',
-        'sub_bg':'url(/assets/images/istockphoto-972908868-612x612.jpg)',
+        'custom_gradient': 'linear-gradient(116deg, rgba(14,2,24,1) 66%, rgba(43,21,78,1) 100%)',
+        'layer-one-backround':'url(assets/images/mainpage/Vector-Smart-Object10.png)',
+        'layer-one-photo':'url(assets/images/mainpage/Layer-21.png)',
+        'adobe-audition':'url(assets/images/mainpage/Adobe_Audition.png)',
+        'adobe-media-encounder':'url(assets/images/mainpage/Adobe_Media_Encoder_Icon.s.png)',
+        'adobe-photoshop':'url(assets/images/mainpage/adobe-photoshop.png)',
+        'adobe-premiere':'url(assets/images/mainpage/adobe-premiere-pro-.png)',
+        'light-room' :'url(assets/images/mainpage/pngwing.com.png)',
+        'after-effect':'url(assets/images/mainpage/aftereffect.png)',
+        'sub_bg':'url(assets/images/mainpage/istockphoto-972908868-612x612.jpg)',
       },
       screens: {
         "xs" : "390px",

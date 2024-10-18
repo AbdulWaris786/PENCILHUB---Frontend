@@ -1,6 +1,8 @@
 import { Injectable } from "@angular/core";
 import { environment } from "src/environments/environment";
 import { HttpClient } from '@angular/common/http';
+import { Observable } from "rxjs";
+import { youtubeEnvironment } from "src/environments/environment.prod";
 
 @Injectable({
     providedIn : 'root'
@@ -9,17 +11,18 @@ export class BackendService {
     constructor(private http: HttpClient) {}
 
     private apiUrl = environment.apiUrl
+    private youtubeApiUrl = youtubeEnvironment.youtubeApiUrl
 
     getPosts() {
-        return this.http.get(`${this.apiUrl}/posts`);
+        return this.http.get(`${this.apiUrl}/media`);
     }
 
     getVideos() {
         return this.http.get(`${this.apiUrl}/videos`);
     }
 
-    getSubscribers() {
-        return this.http.get(`${this.apiUrl}/subscribers`);
+    getSubscribers(): Observable<any> {
+        return this.http.get(this.youtubeApiUrl);
     }
 
     getShowReel() {

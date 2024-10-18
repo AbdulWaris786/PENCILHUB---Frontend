@@ -5,6 +5,7 @@ import { fadeIn, slideInLeft } from "src/app/shared/animation";
 @Component({
     selector : "app-worked-companies",
     templateUrl : "./workedCompanies.component.html",
+    styleUrls : ["./workedCompanies.component.css"],
     animations : [
         slideInLeft, fadeIn
     ]
@@ -14,7 +15,7 @@ export class WorkedCompaniesComponent implements OnInit {
 
     slideInBottomText = false
     slideLeftAnimation = false
-    companies: string[] = ["/assets/images/works/EP7.png", "assets/images/works/ep12cc.png", "assets/images/works/video-editing-pc-&laptop-tumb.png"]
+    companies: string[] = ["/assets/images/works/video-editing-pc-&laptop-tumb.png", "assets/images/works/ep12cc.png", "assets/images/works/video-editing-pc-&laptop-tumb.png"]
 
     ngOnInit(): void {
         // this.backendService.getRecentCompanies().subscribe({

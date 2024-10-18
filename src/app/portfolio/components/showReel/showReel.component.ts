@@ -12,7 +12,7 @@ import { fadeIn, slideInLeft } from "src/app/shared/animation";
 export class ShowReelComponent implements OnInit, AfterViewInit {
     headingInView = false
     contentInView = false
-    reel: any = "assets/images/works/Ae transition 1tumb .png"
+    reel: any = "assets/images/works/video-editing-pc-&laptop-tumb.png"
 
     constructor(private cdr: ChangeDetectorRef, private backendService: BackendService) {}
 

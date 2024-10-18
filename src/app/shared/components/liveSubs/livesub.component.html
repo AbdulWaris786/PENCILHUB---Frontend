@@ -1,6 +1,6 @@
 <div class="bg-sub_bg bg-cover sm:bg-contain bg-no-repeat bg-center">
     <div class="opacity-95 backdrop-blur-3xl w-full px-8 py-5 flex flex-col items-center gap-[1.5rem] text-[rgb(255,255,255)] overflow-hidden">
-        <div class="text-[2.3rem]" [@slideInLeft]="slideAnimation ? 'visible' : 'hidden'" (inView)="onSliderInView()" inView>
+        <div class="text-[2.3rem] text-center" [@slideInLeft]="slideAnimation ? 'visible' : 'hidden'" (inView)="onSliderInView()" inView>
             <b *ngIf="page === 'home'">What We Do.</b>
             <b *ngIf="page === 'portfolio'"><i>YOUTUBE CONTENT CREATOR</i></b>
         </div>
@@ -15,7 +15,7 @@
         <div *ngIf="page === 'portfolio'" [@fadeIn]="fadeAnimation ? 'visible' : 'hidden'" (inView)="onFadeInInView()" inView class="text-center px-[2%] sm:px-[10%] md:px-[15%] lg:px-[20%] xl:px-[25%] 2xl:px-[30%]">
             Crafted and edited visually compelling videos for the 
             PencilHub YouTube Channel,
-            which boasts {{ finalSubscribersCount }} , {{ totalViews }} views, 
+            which boasts {{ formattedSubscribersCount }} , {{ totalViews }} views, 
             and a content library of {{ totalVideos }} videos.
             Utilized Adobe Premiere Pro for video editing,
             After Effects for dynamic animations,
@@ -26,11 +26,11 @@
         </div>
         <div class="flex gap-3 items-center" [@fadeIn]="fadeAnimation ? 'visible' : 'hidden'" (inView)="onFadeInInView()" inView>
             <div class="w-[4rem] h-[4rem] rounded-full">
-                <img src="/assets/images/new profile.png" alt="">
+                <img [src]="profileImg" alt="">
             </div>
             <div>
                 <div>live subscribers</div>
-                <div class="text-2xl" ><b>{{ subscriberCount | number }}</b></div>
+                <div class="text-2xl" ><b>{{ formattedSubscribersCount }}</b></div>
             </div>
         </div>
     </div>

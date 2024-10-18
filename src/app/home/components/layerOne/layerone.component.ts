@@ -107,6 +107,10 @@ export class LayerOneComponent {
   showMainImage: boolean = false
   showElements: boolean = false
 
+  bannerImg = "assets/images/works/Layer-21.png"
+  pencilhubText = "assets/images/mainpage/Screenshot_2024-08-17_163937-removebg-preview.png"
+  splashImg = "/assets/images/mainpage/Splash.png"
+
   onBannerTextInView() {
     this.slideInLeftText = true
     this.showButton = true

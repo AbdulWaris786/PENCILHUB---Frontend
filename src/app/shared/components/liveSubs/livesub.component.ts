@@ -1,7 +1,6 @@
 import { ChangeDetectorRef, Component, Input, OnInit } from "@angular/core";
 import { fadeIn, slideInLeft } from "../../animation";
 import { BackendService } from "src/app/services/backend.service";
-import { response } from "express";
 
 @Component({
     selector : "app-livesub",
@@ -14,23 +13,29 @@ export class LiveSubsComponent implements OnInit {
     slideAnimation = false
     fadeAnimation = false
     subscriberCount = 0
-    finalSubscribersCount = 29516
+    finalSubscribersCount: number = 20000
+    formattedSubscribersCount: string = "0";
     animationState = 'initial'
-    @Input() page: string = ""
-    @Input() totalVideos = 0
-    @Input() totalViews = ""
+    profileImg = "assets/images/mainpage/new profile.png"
+    @Input() page = ""
+    totalVideos = 250
+    totalViews = "2.5M"
 
     constructor(private cdr: ChangeDetectorRef, private backendService: BackendService) {}
 
     ngOnInit(): void {
-        // this.backendService.getSubscribers().subscribe({
-        //     next : (response: any)=>{
-        //         this.finalSubscribersCount = response.subscriberCount
-        //     },
-        //     error : (rsponse: any)=>{
-        //         window.location.reload()
-        //     },
-        // })
+        this.backendService.getSubscribers().subscribe({
+            next : (response: any)=>{
+                // this.finalSubscribersCount = response.items[0].statistics.subscriberCount
+                console.log(response.items[0]);
+                this.totalViews = this.formatSubscriberCount(response.items[0].statistics.viewCount)
+                this.totalVideos = response.items[0].statistics.videoCount
+                this.finalSubscribersCount = parseInt(response.items[0].statistics.subscriberCount, 10); // Raw number
+                this.formattedSubscribersCount = this.formatSubscriberCount(this.finalSubscribersCount);            },
+            error : (response: any)=>{                
+                window.location.reload()
+            },
+        })
     }
 
     onSliderInView() {
@@ -45,7 +50,7 @@ export class LiveSubsComponent implements OnInit {
     }
 
     animateCountUp() {
-        const duration = 2000
+        const duration = 1000
         const frameDuration = 1000 / 60
         const totalFrames = Math.round(duration / frameDuration)
         const increment = this.finalSubscribersCount / totalFrames
@@ -54,12 +59,25 @@ export class LiveSubsComponent implements OnInit {
         const counter = setInterval(() => {
             frame++
             this.subscriberCount = Math.round(this.subscriberCount + increment)
+            this.formattedSubscribersCount = this.formatSubscriberCount(this.subscriberCount);
+            this.cdr.detectChanges()
             
             if ( frame === totalFrames ) {
                 clearInterval(counter)
                 this.subscriberCount = this.finalSubscribersCount
+                this.formattedSubscribersCount = this.formatSubscriberCount(this.finalSubscribersCount);
             }
 
         }, frameDuration);
+    }
+
+    formatSubscriberCount(count: number) {
+        if (count >= 1000000) {
+            return (count / 1000000).toFixed(1).replace(/\.0$/, '') + 'M'; 
+        }
+        if (count >= 1000) {
+            return (count / 1000).toFixed(1).replace(/\.0$/, '') + 'K';
+        }
+        return count.toString();
     }
 }
