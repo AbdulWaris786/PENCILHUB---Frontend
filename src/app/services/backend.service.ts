@@ -11,18 +11,19 @@ export class BackendService {
     constructor(private http: HttpClient) {}
 
     private apiUrl = environment.apiUrl
-    private youtubeApiUrl = youtubeEnvironment.youtubeApiUrl
+    private ytApiUrl = youtubeEnvironment.youtubeApiUrl
+    private ytVideoUrl = youtubeEnvironment.videoApiUrl
 
     getPosts() {
         return this.http.get(`${this.apiUrl}/media`);
     }
 
-    getVideos() {
-        return this.http.get(`${this.apiUrl}/videos`);
+    getVideos(): Observable<any> {
+        return this.http.get(this.ytVideoUrl);
     }
 
     getSubscribers(): Observable<any> {
-        return this.http.get(this.youtubeApiUrl);
+        return this.http.get(this.ytApiUrl);
     }
 
     getShowReel() {

@@ -109,7 +109,6 @@ export class LayerOneComponent {
 
   bannerImg = "assets/images/works/Layer-21.png"
   pencilhubText = "assets/images/mainpage/Screenshot_2024-08-17_163937-removebg-preview.png"
-  splashImg = "/assets/images/mainpage/Splash.png"
 
   onBannerTextInView() {
     this.slideInLeftText = true
@@ -123,4 +122,7 @@ export class LayerOneComponent {
     this.cdr.detectChanges()
   }
 
+  navigate() {
+    window.open("https://www.youtube.com/PencilHub")
+  }
 }

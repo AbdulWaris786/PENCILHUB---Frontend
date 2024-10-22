@@ -1,6 +1,7 @@
 import { ChangeDetectorRef, Component, Renderer2 } from "@angular/core";
 import { animate, state, style, transition, trigger } from "@angular/animations";
 import { Router } from "@angular/router";
+import { fadeIn, slideInLeft } from "../../animation";
 
 @Component({
     selector:'app-header',
@@ -19,7 +20,8 @@ import { Router } from "@angular/router";
             transition('hidden <=> visible', [
                 animate('.5s ease-out')
             ])
-        ])
+        ]),
+        fadeIn
     ]
 })
 
@@ -27,6 +29,7 @@ export class HeaderComponent{
     pencilhub_watermark = "assets/images/mainpage/pencilhub.in-logo.svg"
     togglePopup = false
     constructor(private cdr: ChangeDetectorRef, private renderer: Renderer2, private router: Router) {}
+    
     onHeaderBar(){
         if ( this.togglePopup ) {
             this.slideInLeftText = false
@@ -58,20 +61,13 @@ export class HeaderComponent{
         this.slideInLeftText = true
         this.cdr.detectChanges()
     }
-
-    navigate(messenger: string) {        
-        if ( messenger === "whatsapp" ) {
-            window.open("https://wa.me/+918593858991", "_blank")
-        } else if ( messenger === "instagram" ) {
-            window.open("https://www.instagram.com/pencil_hub", "_blank")
-        } else if ( messenger === "facebook" ) {
-            window.open("https://www.facebook.com/yourfacebookpage", "_blank")
-        } else {
-            window.open("https://twitter.com/yourtwitterhandle", "_blank")
-        }
+ 
+    headLi = false
+    headLiView() {
+        this.headLi = true
     }
 
     isActive(route: string): boolean {
         return this.router.url === route;
-      }
+    }
 }

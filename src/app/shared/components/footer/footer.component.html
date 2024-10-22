@@ -1,51 +1,51 @@
-<div class="bg-[rgb(15,7,21)] w-full text-[rgb(255,255,255)] px-7 xs:px-10 pt-3 flex flex-col sm:flex-row sm:items-center gap-8 pb-10">
-    <div class="sm:w-1/2 lg:w-2/3 md:pl-5 lg:pl-[4rem] xl:pl-[8rem]">
+<div class="bg-[rgb(15,7,21)] w-full text-[hsl(0,0%,100%)] px-7 xs:px-10 pt-3 flex flex-col sm:flex-row sm:items-center gap-8 pb-10">
+    <div class="sm:w-1/2 lg:w-2/3 md:pl-5 lg:pl-[4rem] xl:pl-[8rem] text-gray-400" (inView)="sec1View()" [@slideInLeft]="sec1 ? 'visible' : 'hidden'">
         <div>
             <img [src]="pencilhub_watermark" class="w-28" alt=""/>
         </div>
         <div class="px-2 mb-3 max-w-[30rem]">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. In sit accusamus adipisci, qui quidem suscipit eos 
         </div>
-        <div class="px-2 mb-3">
-            Phone : +91 8593 858 991
+        <div class="px-2 mb-3 flex">
+            Phone : &nbsp;<div (click)="navigate('whatsapp')" class="hover:text-gray-200 hover:cursor-pointer"> +91 8593 858 991</div>
         </div>
         <div class="px-2 flex gap-2">
             <div *ngFor="let icon of socialMediaIcons" class="">
-                <img [src]="icon" alt="">
+                <img [src]="icon.img" (click)="navigate(icon.messenger)" alt="" class="hover:cursor-pointer">
             </div>
         </div>
     </div>
 
-    <div class="sm:w-1/2 lg:w-1/3 flex gap-8 md:justify-center lg:pr-[4rem]">
-        <div class="px-2 hidden sm:flex flex-col gap-2">
+    <div class="sm:w-1/2 lg:w-1/3 flex gap-8 md:justify-center lg:pr-[4rem] xl:mr-[10rem]">
+        <div class="px-2 hidden sm:flex flex-col gap-2" (inView)="sec2View()" [@fadeIn]="sec2 ? 'visible' : 'hidden'">
             <div class="text-[1.2rem]">Company</div>
-            <ul class="flex flex-col">
+            <ul class="flex flex-col text-gray-400">
                 <li>
-                    <a href="/affiliate">Affiliate</a>
+                    <a class="hover:text-gray-200" href="/affiliate">Affiliate</a>
                 </li>
                 <li>
-                    <a href="/affiliate">About</a>
+                    <a class="hover:text-gray-200" href="/affiliate">About</a>
                 </li>
                 <li>
-                    <a href="/contact">Contact</a>
+                    <a class="hover:text-gray-200" href="/contact">Contact</a>
                 </li>
                 <li>
-                    <a href="/blog">Blog</a>
+                    <a class="hover:text-gray-200" href="/blog">Blog</a>
                 </li>
                 <li>
-                    <a href="/faq">Faq</a>
+                    <a class="hover:text-gray-200" href="/faq">Faq</a>
                 </li>
             </ul>
         </div>
     
-        <div class="px-2 flex flex-col gap-2">
+        <div class="px-2 flex flex-col gap-2" (inView)="sec3View()" [@fadeIn]="sec3 ? 'visible' : 'hidden'">
             <div class="text-[1.2rem]">More</div>
-            <ul>
+            <ul class="text-gray-400">
                 <li>
-                    <a href="/terms-condition">Terms & Condition</a>
+                    <a href="/terms-condition" class="hover:text-gray-200">Terms & Condition</a>
                 </li>
                 <li>
-                    <a href="/privacy-policy">Privacy Policy</a>
+                    <a href="/privacy-policy" class="hover:text-gray-200">Privacy Policy</a>
                 </li>
             </ul>
         </div>

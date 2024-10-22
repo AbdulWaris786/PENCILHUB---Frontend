@@ -98,4 +98,8 @@ export class SliderComponent {
         this.slideLeft = false;
         this.slideRight = false;
     }
+
+    redirectToPage(url: string) {
+        window.open(`${url}`)
+    }
 }

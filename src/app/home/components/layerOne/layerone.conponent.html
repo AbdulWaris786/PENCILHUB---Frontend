@@ -16,7 +16,9 @@
                 Join us to master video and photo editing, from basics to pro-level <br>Let's create something amazing together!
             </div>
             <div class="w-full flex justify-center sm:justify-start pt-2 sm:px-10">
-                <button [@fadeIn]="slideInLeftText ? 'visible' : 'hidden'" class="bg-[rgb(132,78,242)] text-white text-center rounded-[8px] text-[20px] font-serif px-5 py-1 transition ease-in-out active:scale-[.98]">Join us on YouTube!</button>
+                <button [@fadeIn]="slideInLeftText ? 'visible' : 'hidden'" class="bg-[rgb(132,78,242)] text-white text-center rounded-[8px] text-[20px] font-serif px-5 py-1 transition ease-in-out active:scale-[.98]" (click)="navigate()">
+                    Join us on YouTube!
+                </button>
             </div>
         </div>
     </div>

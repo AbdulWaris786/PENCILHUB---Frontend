@@ -26,14 +26,12 @@ export class LiveSubsComponent implements OnInit {
     ngOnInit(): void {
         this.backendService.getSubscribers().subscribe({
             next : (response: any)=>{
-                // this.finalSubscribersCount = response.items[0].statistics.subscriberCount
-                console.log(response.items[0]);
                 this.totalViews = this.formatSubscriberCount(response.items[0].statistics.viewCount)
                 this.totalVideos = response.items[0].statistics.videoCount
                 this.finalSubscribersCount = parseInt(response.items[0].statistics.subscriberCount, 10); // Raw number
                 this.formattedSubscribersCount = this.formatSubscriberCount(this.finalSubscribersCount);            },
             error : (response: any)=>{                
-                window.location.reload()
+                // window.location.reload()
             },
         })
     }

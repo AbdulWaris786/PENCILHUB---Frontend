@@ -20,11 +20,12 @@
                     *ngFor="let post of posts ? posts : []"
                     class="post-card rounded-md"
                     [ngClass]="{ 'slide-left': slideLeft, 'slide-right': slideRight }">
-                    <img *ngIf="post.media_type === 'image'" [src]="post.sourceUrl" class="w-full h-full rounded-md" alt="{{ post.alt_text }}">
-                    <!-- <video *ngIf="contentType === 'Video'" controls class="w-full h-full rounded-md"> -->
-                        <!-- <source [src]="post" type="video/mp4"> -->
-                        <img *ngIf="contentType === 'Video'" [src]="post" class="w-full h-full rounded-md" alt="">
-                    <!-- </video> -->
+
+                    
+                    <img (click)="redirectToPage(post.link)" *ngIf="post.media_type === 'image'" [src]="post.sourceUrl" class="w-full h-full rounded-md" alt="{{ post.alt_text }}">
+
+                    <iframe *ngIf="contentType === 'Video'" [src]="post.safeUrl" frameborder="0" allowfullscreen></iframe>
+
                 </div>
             </div>
         </div>
