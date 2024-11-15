@@ -1,0 +1,22 @@
+/* header.component.css */
+
+.hidden-header {
+    top: -100px;
+    transition: top 0.5s ease;
+}
+
+.scrolled-header {
+    transition: top 0.5s ease;
+}
+    
+.scrolled-header.hidden {
+    top: -100px;
+}
+  
+.slide-down {
+    background-color: black; /* Customize as needed */
+    top: 0;
+}
+
+
+    

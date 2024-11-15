@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { environment } from "src/environments/environment";
 import { HttpClient } from '@angular/common/http';
-import { Observable } from "rxjs";
+import { forkJoin, Observable } from "rxjs";
 import { youtubeEnvironment } from "src/environments/environment.prod";
 
 @Injectable({
@@ -13,8 +13,10 @@ export class BackendService {
     private apiUrl = environment.apiUrl
     private ytApiUrl = youtubeEnvironment.youtubeApiUrl
     private ytVideoUrl = youtubeEnvironment.videoApiUrl
+    private recentVideos = youtubeEnvironment.recentVideos
+    private filteredVideos = youtubeEnvironment.filteredVideoUrl
 
-    getPosts() {
+    getPosts(): Observable<any> {
         return this.http.get(`${this.apiUrl}/media`);
     }
 
@@ -22,24 +24,17 @@ export class BackendService {
         return this.http.get(this.ytVideoUrl);
     }
 
-    getSubscribers(): Observable<any> {
-        return this.http.get(this.ytApiUrl);
-    }
-
-    getShowReel() {
-        return this.http.get(`${this.apiUrl}/show-reel`);
+    getVideoDetails(videoIds: Array<string>): Observable<any> {
+        let videoArray = videoIds.map(id => this.http.get(`${this.filteredVideos}&id=${id}`));
+        return forkJoin(videoArray);
     }
 
     getRecentWorks() {
-        return this.http.get(`${this.apiUrl}/recent-works`);
+        return this.http.get(this.recentVideos);
     }
 
-    getRecentCompanies() {
-        return this.http.get(`${this.apiUrl}/recent-companies`);
-    }
-
-    getChannelInfo() {
-        return this.http.get(`${this.apiUrl}/channel-info`);
+    getSubscribers(): Observable<any> {
+        return this.http.get(this.ytApiUrl);
     }
 
     contactUs(data: object) {

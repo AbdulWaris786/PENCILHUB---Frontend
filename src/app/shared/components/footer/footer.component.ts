@@ -47,4 +47,8 @@ export class FooterComponent {
     sec3View() {
         this.sec3 = true
     }
+
+    onFooterNavigate(route: string) {
+        window.open(`https://pencilhub.in/${route}`)
+    }
 }

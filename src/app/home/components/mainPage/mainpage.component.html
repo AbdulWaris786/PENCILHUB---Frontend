@@ -1,9 +1,11 @@
-<div class="h-[auto] w-[100vw] bg-custom_gradient">
-    <app-header></app-header>
-    <app-layer-one></app-layer-one>
-    <app-livesub page="home"></app-livesub>
-    <slider-component [posts]="posts" [delay]="2500" contentType="Post"></slider-component>
-    <slider-component [posts]="videos" [delay]="30000" contentType="Video"></slider-component>
-    <contact-us-component info="Us"></contact-us-component>
-    <app-footer></app-footer>
+<div class="flex w-full bg-custom_gradient justify-center">
+    <div class=" h-[auto] w-[100vw] max-w-screen-3xl bg-[rgb(15,7,21)]">
+        <app-header></app-header>
+        <app-layer-one></app-layer-one>
+        <app-livesub page="home"></app-livesub>
+        <slider-component [delay]="2500" [contentType]="'Post'"></slider-component>
+        <slider-component [delay]="3500" [contentType]="'Video'"></slider-component>
+        <contact-us-component info="Us"></contact-us-component>
+        <app-footer></app-footer>
+    </div>
 </div>

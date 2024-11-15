@@ -48,26 +48,32 @@ export class LiveSubsComponent implements OnInit {
     }
 
     animateCountUp() {
-        const duration = 1000
-        const frameDuration = 1000 / 60
-        const totalFrames = Math.round(duration / frameDuration)
-        const increment = this.finalSubscribersCount / totalFrames
-
-        let frame = 0
+        const duration = 1000; // Total animation duration in milliseconds
+        const frameDuration = 1000 / 60; // Frame duration (60 frames per second)
+        const totalFrames = Math.round(duration / frameDuration);
+        const increment = this.finalSubscribersCount / totalFrames;
+    
+        this.subscriberCount = 0; // Start counting from 0
+        let frame = 0;
+    
         const counter = setInterval(() => {
-            frame++
-            this.subscriberCount = Math.round(this.subscriberCount + increment)
+            frame++;
+            this.subscriberCount = Math.min(
+                Math.round(this.subscriberCount + increment),
+                this.finalSubscribersCount
+            );
             this.formattedSubscribersCount = this.formatSubscriberCount(this.subscriberCount);
-            this.cdr.detectChanges()
-            
-            if ( frame === totalFrames ) {
-                clearInterval(counter)
-                this.subscriberCount = this.finalSubscribersCount
+            this.cdr.detectChanges();
+    
+            // Stop the animation when it reaches the final count
+            if (frame === totalFrames || this.subscriberCount >= this.finalSubscribersCount) {
+                clearInterval(counter);
+                this.subscriberCount = this.finalSubscribersCount;
                 this.formattedSubscribersCount = this.formatSubscriberCount(this.finalSubscribersCount);
             }
-
         }, frameDuration);
     }
+    
 
     formatSubscriberCount(count: number) {
         if (count >= 1000000) {

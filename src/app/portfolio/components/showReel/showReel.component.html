@@ -1,6 +1,6 @@
-<div class="bg-[rgb(15,7,21)] w-full px-5 py-5 flex flex-col items-center gap-[1.5rem] text-[rgb(255,255,255)] overflow-hidden">
+<div class="bg-[rgb(15,7,21)] w-full px-5 py-10 sm:py-[5rem]  flex flex-col items-center gap-[1.5rem] text-[rgb(255,255,255)] overflow-hidden">
     <div 
-        class="text-[2.3rem]" 
+        class="text-[2.5rem] sm:text-[3.5rem]" 
         [@slideInLeft]="headingInView ? 'visible' : 'hidden'"
         (inView)="onHeadingInView()"
         inView
@@ -11,8 +11,12 @@
         [@fadeIn]="contentInView ? 'visible' : 'hidden'" 
         (inView)="onContentInView()"
         inView
-        class="rounded-md w-[17rem] h-[10rem] sm:w-[25rem] sm:h-[14rem] xl:w-[30rem] xl:h-[15.5rem] overflow-auto"
+        class="rounded-md w-[95%] md:w-[75%] lg:w-[60%] h-auto overflow-auto"
     >
-        <img [src]="reel" class="w-full h-full rounded-md" alt="">
+        <!-- <img [src]="reel" class="w-full h-full rounded-md" alt=""> -->
+        <video #videoPlayer width="100%" controls autoplay>
+            <source src="assets/videos/pencilhub.mp4">
+            Your browser does not support the video tag.
+        </video>
     </div>
 </div>

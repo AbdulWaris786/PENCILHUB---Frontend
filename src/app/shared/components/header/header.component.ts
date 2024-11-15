@@ -1,7 +1,7 @@
-import { ChangeDetectorRef, Component, Renderer2 } from "@angular/core";
+import { ChangeDetectorRef, Component, HostListener, Renderer2 } from "@angular/core";
 import { animate, state, style, transition, trigger } from "@angular/animations";
 import { Router } from "@angular/router";
-import { fadeIn, slideInLeft } from "../../animation";
+import { fadeIn } from "../../animation";
 
 @Component({
     selector:'app-header',
@@ -28,8 +28,24 @@ import { fadeIn, slideInLeft } from "../../animation";
 export class HeaderComponent{
     pencilhub_watermark = "assets/images/mainpage/pencilhub.in-logo.svg"
     togglePopup = false
+    isScrolled = false
+    hasScrolled = false
+    LutsliHovered = false
+    LutsliClicked = false
+    LRliHovered = false
+    LRliClicked = false
+    ModapkliHovered = false
+    ModapkliClicked = false
+
     constructor(private cdr: ChangeDetectorRef, private renderer: Renderer2, private router: Router) {}
     
+    @HostListener("window:scroll", [])
+    onWindowScroll() {
+        const scrollPosition = window.scrollY || document.documentElement.scrollTop
+        this.isScrolled = scrollPosition > 0
+        // this.hasScrolled = window.scrollY > 50
+    }
+
     onHeaderBar(){
         if ( this.togglePopup ) {
             this.slideInLeftText = false
@@ -48,6 +64,32 @@ export class HeaderComponent{
             }, 0);
         }
     }
+
+    onHeaderNavigate(route: string) {
+        this.togglePopup = false
+        this.enableScroll()
+        if( route === '' ) return
+        window.open(`https://pencilhub.in/${route}`)
+    }
+
+    headerLiClicked(li: string) {
+        if ( li === "Luts" ) {
+            this.LutsliClicked = !this.LutsliClicked
+            this.LRliClicked = false
+            this.ModapkliClicked = false
+        } else if ( li === "Lr" ) {
+            this.LRliClicked = !this.LRliClicked
+            this.LutsliClicked = false
+            this.ModapkliClicked = false
+        } else if ( li === "Mod" ) {
+            this.ModapkliClicked = !this.ModapkliClicked
+            this.LutsliClicked = false
+            this.LRliClicked = false
+        } else {
+            return
+        }
+    }
+
     disableScroll() {
         this.renderer.setStyle(document.body, 'overflow', 'hidden');
     }

@@ -12,6 +12,7 @@
 /* Post card styles */
 .post-card {
     min-width: 17rem;
+    width: 17rem;
     height: 11rem;
     text-align: center;
     line-height: 11rem;

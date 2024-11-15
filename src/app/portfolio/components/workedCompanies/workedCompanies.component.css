@@ -5,3 +5,20 @@
     scrollbar-width: none; /* For Firefox */
     -ms-overflow-style: none; /* For Internet Explorer */
 }
+
+
+.slide-left {
+    animation: slide-left 1s ease-in-out forwards;
+}
+
+@keyframes slide-left {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(calc(-100% - 2.5rem));
+    }
+    100% {
+        transform: translateX(0);
+    }
+}

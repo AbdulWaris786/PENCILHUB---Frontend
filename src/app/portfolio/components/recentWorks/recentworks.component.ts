@@ -1,36 +1,54 @@
-import { AfterViewInit, Component, HostListener, OnInit, ElementRef, ViewChildren, QueryList, AfterViewChecked, ChangeDetectorRef, ViewChild } from "@angular/core";
+import { AfterViewInit, Component, HostListener, OnInit, ElementRef, ViewChildren, QueryList, Input, ViewChild } from "@angular/core";
 import { gsap } from 'gsap';
 import { BackendService } from "src/app/services/backend.service";
 
 @Component({
-    selector : "recent-works-component",
-    templateUrl : "./recentworks.component.html",
+    selector: "recent-works-component",
+    templateUrl: "./recentworks.component.html",
 })
 export class RecentWorksComponent implements OnInit, AfterViewInit {
-    contents: Array<string> = ["assets/images/works/EP10.png", "assets/images/works/EP10.png", "assets/images/works/ep12cc.png", "assets/images/works/video-editing-pc-&laptop-tumb.png", "assets/images/works/video-editing-pc-&laptop-tumb.png", "assets/images/works/video-editing-pc-&laptop-tumb.png"]
-    visibleContents: Array<string> = []
+    contents: Array<any> = [];
+    visibleContents: Array<string> = [];
 
     constructor(private backendService: BackendService) {}
 
-    @ViewChild("heading") heading!: ElementRef
+    @ViewChild("heading") heading!: ElementRef;
     @ViewChildren('contentElement') contentElements!: QueryList<ElementRef>;
 
     ngOnInit(): void {
-        this.updateVisibleContents(window.innerWidth);
-        // this.backendService.getRecentWorks().subscribe({
-        //     next: (response: any) => {
-        //         this.contents = response.contents
-        //     },
-        //     error: (respose: any) => {
-        //         console.log("failed");
-                
-        //     }
-        // })
+        this.backendService.getRecentWorks().subscribe({
+            next: (response: any) => {
+                const validVideoIds = response.items.filter((video: any) => video.id && video.id.videoId);
+
+                if (validVideoIds.length) {
+                    const videoIds = validVideoIds.map((video: any) => video.id.videoId);
+                    this.backendService.getVideoDetails(videoIds).subscribe({
+                        next: (detailsResponse: any[]) => {
+                            const allVideos = detailsResponse.map(response => response.items).flat();
+
+                            this.contents = allVideos.filter((video: any) => {
+                                const duration = video.contentDetails.duration;
+                                return duration.includes("M") || duration.includes("H");
+                            }).slice(0, 6);
+
+                            if (this.contents.length > 1) {
+                                this.updateVisibleContents(window.innerWidth);
+                            }
+                        },
+                        error: (error: any) => {
+                            console.error("Error fetching video details:", error);
+                        }
+                    });
+                }
+            },
+            error: (response: any) => {
+                console.log("failed", response.error);
+            }
+        });
     }
 
     ngAfterViewInit(): void {
-        // Ensure the view is fully rendered before applying animations
-        this.animateHeading()
+        this.animateHeading();
         this.animateContents();
     }
 
@@ -42,15 +60,12 @@ export class RecentWorksComponent implements OnInit, AfterViewInit {
 
     private updateVisibleContents(screenWidth: number): void {
         if (screenWidth < 640) {
-            // Small screen (Mobile)
-            this.visibleContents = this.contents.slice(0, 4); // Show 4 items
+            this.visibleContents = this.contents.map((video: any) => video.id).slice(0, 4); 
         } else {
-            // Large screen (Desktop or bigger)
-            this.visibleContents = this.contents; // Show all 6 items
+            this.visibleContents = this.contents.map((video: any) => video.id).slice(0, 6); 
         }
     }
 
-    // Animate the visible contents after updating them
     private animateContents(): void {
         this.contentElements.forEach((content: ElementRef) => {
             this.animateEnter(content.nativeElement);
@@ -59,21 +74,21 @@ export class RecentWorksComponent implements OnInit, AfterViewInit {
 
     animateEnter(element: HTMLElement) {
         gsap.from(element, {
-            opacity : 0,
-            scale : .95,
-            duration : 2,
-            ease : "power4.inOut",
+            opacity: 0,
+            scale: 0.95,
+            duration: 2,
+            ease: "power4.inOut",
             stagger: 0.5
-        })
+        });
     }
 
     animateHeading(): void {
         gsap.from(this.heading.nativeElement, {
-            x : -30,
-            opacity : 0,
-            duration : 1,
-            delay : .5,
-            ease : "power3.out"
-        })
+            x: -30,
+            opacity: 0,
+            duration: 1,
+            delay: 0.5,
+            ease: "power3.out"
+        });
     }
 }

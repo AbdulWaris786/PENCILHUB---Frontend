@@ -1,4 +1,5 @@
-import { AfterViewInit, ChangeDetectorRef, Component, OnInit } from "@angular/core";
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from "@angular/core";
+import { DomSanitizer } from "@angular/platform-browser";
 import { BackendService } from "src/app/services/backend.service";
 import { fadeIn, slideInLeft } from "src/app/shared/animation";
 
@@ -9,26 +10,30 @@ import { fadeIn, slideInLeft } from "src/app/shared/animation";
         slideInLeft, fadeIn
     ]
 })
-export class ShowReelComponent implements OnInit, AfterViewInit {
+export class ShowReelComponent {
     headingInView = false
     contentInView = false
-    reel: any = "assets/images/works/video-editing-pc-&laptop-tumb.png"
 
-    constructor(private cdr: ChangeDetectorRef, private backendService: BackendService) {}
+    constructor(private cdr: ChangeDetectorRef, private backendService: BackendService,private sanitizer: DomSanitizer) {}
 
-    ngOnInit(): void {
-        // this.backendService.getShowReel().subscribe({
-        //     next: (response: any) => {
-        //         this.reel = response.reel
-        //     },
-        //     error: (respose: any) => {
-        //         console.log("failed");
-                
-        //     }
-        // })
+    @ViewChild("videoPlayer") videoPlayer!: ElementRef<HTMLVideoElement>;
+
+    ngAfterViewInit(): void {
+        const videoElement = this.videoPlayer.nativeElement
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    videoElement.play()
+                } else {
+                    videoElement.pause()
+                }
+            })
+            },
+            { threshold : 0.3 }
+        )
+        observer.observe(videoElement)
     }
-
-    ngAfterViewInit(): void {}
 
     onHeadingInView(): void {
         this.headingInView = true

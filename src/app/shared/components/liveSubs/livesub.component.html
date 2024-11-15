@@ -1,10 +1,10 @@
-<div class="bg-sub_bg bg-cover sm:bg-contain bg-no-repeat bg-center">
-    <div class="opacity-95 backdrop-blur-3xl w-full px-8 py-5 flex flex-col items-center gap-[1.5rem] text-[rgb(255,255,255)] overflow-hidden">
-        <div class="text-[2.3rem] text-center" [@slideInLeft]="slideAnimation ? 'visible' : 'hidden'" (inView)="onSliderInView()" inView>
+<div class="bg-sub_bg bg-cover sm:bg-contain md:bg-cover bg-no-repeat bg-center">
+    <div class="opacity-95 backdrop-blur-3xl w-full px-[8%] py-[3rem] sm:py-[5rem] flex flex-col items-center gap-[1.5rem] text-[rgb(255,255,255)] overflow-hidden">
+        <div class="text-[2.3rem] text-center" [@slideInLeft]="slideAnimation ? 'visible' : 'hidden'" (inView)="onSliderInView()">
             <b *ngIf="page === 'home'">What We Do.</b>
             <b *ngIf="page === 'portfolio'"><i>YOUTUBE CONTENT CREATOR</i></b>
         </div>
-        <div *ngIf="page === 'home'" [@fadeIn]="fadeAnimation ? 'visible' : 'hidden'" (inView)="onFadeInInView()" inView class="text-center px-[2%] sm:px-[10%] md:px-[15%] lg:px-[20%] xl:px-[25%] 2xl:px-[30%]">
+        <div *ngIf="page === 'home'" [@fadeIn]="fadeAnimation ? 'visible' : 'hidden'" (inView)="onFadeInInView()" class="text-center px-[2%] max-w-[55rem]">
             Welcome to our channel! We're here to help you
             master video and photo editing, photography, videography, and poster design.
             From beginners to advanced users, we provide creative and detailed  tutorials
@@ -12,10 +12,10 @@
             and unlock your full creative potential with us.
             Join our community and start creating amazing content today!
         </div>
-        <div *ngIf="page === 'portfolio'" [@fadeIn]="fadeAnimation ? 'visible' : 'hidden'" (inView)="onFadeInInView()" inView class="text-center px-[2%] sm:px-[10%] md:px-[15%] lg:px-[20%] xl:px-[25%] 2xl:px-[30%]">
+        <div *ngIf="page === 'portfolio'" [@fadeIn]="fadeAnimation ? 'visible' : 'hidden'" (inView)="onFadeInInView()" class="text-center px-[2%] max-w-[55rem]">
             Crafted and edited visually compelling videos for the 
             PencilHub YouTube Channel,
-            which boasts {{ formattedSubscribersCount }} , {{ totalViews }} views, 
+            which boasts {{ finalSubscribersCount }} , {{ totalViews }} views, 
             and a content library of {{ totalVideos }} videos.
             Utilized Adobe Premiere Pro for video editing,
             After Effects for dynamic animations,
@@ -24,7 +24,7 @@
             and optimization to enhance audience 
             engagement and foster channel grownth.
         </div>
-        <div class="flex gap-3 items-center" [@fadeIn]="fadeAnimation ? 'visible' : 'hidden'" (inView)="onFadeInInView()" inView>
+        <div class="flex gap-3 p-3 items-center" [@fadeIn]="fadeAnimation ? 'visible' : 'hidden'" (inView)="onFadeInInView()">
             <div class="w-[4rem] h-[4rem] rounded-full">
                 <img [src]="profileImg" alt="">
             </div>

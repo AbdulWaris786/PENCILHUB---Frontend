@@ -1,6 +1,6 @@
-<div class="bg-[rgb(15,7,21)] w-full px-5 py-5 flex flex-col items-center gap-[1.5rem] text-[rgb(255,255,255)] overflow-hidden">
+<div class="bg-[rgb(15,7,21)] w-full px-5 py-[3rem] sm:py-[5rem] flex flex-col items-center gap-[1.5rem] text-[rgb(255,255,255)] overflow-hidden">
     <div 
-        class="text-[3.5rem] sm_max:text-[3rem]"
+        class="text-[2.5rem] sm:text-[3.5rem] "
         [@slideInLeft]="slideLeftAnimation ? 'visible' : 'hidden'"
         (inView)="onHeadInView()"
         inView
@@ -11,38 +11,45 @@
         (inView)="onSliderInView()"
         inView
     >
-        <button *ngIf="contentType === 'Post'" (click)="previous()" class="text-[2rem] text-gray-500 rounded-lg active:scale-95">
+        <button (click)="previous()" class="text-[2rem] text-gray-500 rounded-lg active:scale-95">
             <i class="fa-solid fa-angle-left"></i>
         </button>
         <div class="flex items-center justify-center w-[59rem] lg_max:w-[45rem] md_max:w-[38rem] overflow-hidden slider_container" >
-            <div class="slider-container">
+            <div class="slider-container" *ngIf="contentType === 'Post'">
                 <div
                     *ngFor="let post of posts ? posts : []"
-                    class="post-card rounded-md"
+                    class="post-card rounded-md hover:cursor-pointer"
                     [ngClass]="{ 'slide-left': slideLeft, 'slide-right': slideRight }">
-
                     
-                    <img (click)="redirectToPage(post.link)" *ngIf="post.media_type === 'image'" [src]="post.sourceUrl" class="w-full h-full rounded-md" alt="{{ post.alt_text }}">
-
-                    <iframe *ngIf="contentType === 'Video'" [src]="post.safeUrl" frameborder="0" allowfullscreen></iframe>
+                    <img *ngIf="post.media_type === 'image'" (click)="redirectToPage(post.link)" [src]="post.sourceUrl" class="w-full h-full rounded-md" alt="{{ post.alt_text }}">
 
                 </div>
             </div>
+
+            <div class="slider-container" *ngIf="contentType === 'Video'">
+                    <div
+                        *ngFor="let video of videos ? videos : []"
+                        class="post-card rounded-md hover:cursor-pointer"
+                        [ngClass]="{ 'slide-left': slideLeft, 'slide-right': slideRight }"
+                        (click)="onVideoClicked(video.id)"
+                    >
+                        <img [src]="video.snippet?.thumbnails?.medium?.url" alt="{{ video.snippet?.title }}" class="" >
+                    </div>
+                
+            </div>
         </div>
-        <button *ngIf="contentType === 'Post'" (click)="next()" class=" text-[2rem] text-gray-500 rounded-lg active:scale-95">
+        <button (click)="next()" class=" text-[2rem] text-gray-500 rounded-lg active:scale-95">
             <i class="fa-solid fa-angle-right"></i>
         </button>
     </div>
-    <div 
-        [@fadeIn]="fadeIn ? 'visible' : 'hidden'"
-        (inView)="onFadeInInView()"
-        inView>
-        <!-- <button 
-            *ngIf="contentType === 'Post'" 
-            class="px-4 py-1 flex text-[rgb(255,255,255)] text-[1.5rem] rounded-lg bg-[rgb(126,74,231)] active:scale-95 ease-in-out transition"
-            
-        >
-            <b>More Post</b>
-        </button> -->
+</div>
+
+<div 
+    *ngIf="videoClicked" 
+    class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-[999999999]"
+    (click)="popupAction()"
+>
+    <div class="bg-white w-[90%] md:w-[70%] min-h-[70%] h-auto rounded-lg">
+        <iframe [src]="clickedVideo" class="w-full h-full" frameborder="0"></iframe>
     </div>
 </div>

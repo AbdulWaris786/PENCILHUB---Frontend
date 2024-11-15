@@ -1,53 +1,46 @@
-<div class="bg-[rgb(15,7,21)] w-full text-[hsl(0,0%,100%)] px-7 xs:px-10 pt-3 flex flex-col sm:flex-row sm:items-center gap-8 pb-10">
-    <div class="sm:w-1/2 lg:w-2/3 md:pl-5 lg:pl-[4rem] xl:pl-[8rem] text-gray-400" (inView)="sec1View()" [@slideInLeft]="sec1 ? 'visible' : 'hidden'">
-        <div>
-            <img [src]="pencilhub_watermark" class="w-28" alt=""/>
+<footer class="px-[1px] xl:px-[3px]">
+    <div class="bg-[rgb(15,7,21)] text-[hsl(0,0%,100%)] py-[3rem] sm:py-[5rem] flex flex-col sm:flex-row sm:items-center gap-8 px-[8%] 2xl:px-[] ml-1">
+        <div class="sm:w-1/2 text-gray-400" (inView)="sec1View()" [@slideInLeft]="sec1 ? 'visible' : 'hidden'">
+            <div class="">
+                <img [src]="pencilhub_watermark" class="w-[7.5rem] ml-[-3px]" alt=""/>
+            </div>
+            <div class="mb-3 sm:max-w-[24rem] xl:max-w-[27rem]">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. In sit accusamus adipisci, qui quidem suscipit eos 
+            </div>
+            <div class="flex gap-2">
+                <div *ngFor="let icon of socialMediaIcons" class="">
+                    <img [src]="icon.img" (click)="navigate(icon.messenger)" alt="" class="hover:cursor-pointer">
+                </div>
+            </div>
         </div>
-        <div class="px-2 mb-3 max-w-[30rem]">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. In sit accusamus adipisci, qui quidem suscipit eos 
-        </div>
-        <div class="px-2 mb-3 flex">
-            Phone : &nbsp;<div (click)="navigate('whatsapp')" class="hover:text-gray-200 hover:cursor-pointer"> +91 8593 858 991</div>
-        </div>
-        <div class="px-2 flex gap-2">
-            <div *ngFor="let icon of socialMediaIcons" class="">
-                <img [src]="icon.img" (click)="navigate(icon.messenger)" alt="" class="hover:cursor-pointer">
+    
+        <div class="sm:w-1/2 flex gap-8 md:justify-around">
+            <div class="hidden sm:flex flex-col gap-2" (inView)="sec2View()" [@fadeIn]="sec2 ? 'visible' : 'hidden'">
+                <div class="text-[1.2rem]">Company</div>
+                <ul class="flex flex-col text-gray-400">
+                    <li>
+                        <a (click)="onFooterNavigate('about-us')" class="hover:text-gray-200" href="">About Us</a>
+                    </li>
+                    <li>
+                        <a class="hover:text-gray-200" href="">Contact</a>
+                    </li>
+                    <li>
+                        <a class="hover:text-gray-200" href="">Blog</a>
+                    </li>
+                </ul>
+            </div>
+        
+            <div class="flex flex-col gap-2" (inView)="sec3View()" [@fadeIn]="sec3 ? 'visible' : 'hidden'">
+                <div class="text-[1.2rem]">More</div>
+                <ul class="text-gray-400">
+                    <li>
+                        <a href="/terms-condition" class="hover:text-gray-200">Terms & Condition</a>
+                    </li>
+                    <li>
+                        <a href="/privacy-policy" class="hover:text-gray-200">Privacy Policy</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
-
-    <div class="sm:w-1/2 lg:w-1/3 flex gap-8 md:justify-center lg:pr-[4rem] xl:mr-[10rem]">
-        <div class="px-2 hidden sm:flex flex-col gap-2" (inView)="sec2View()" [@fadeIn]="sec2 ? 'visible' : 'hidden'">
-            <div class="text-[1.2rem]">Company</div>
-            <ul class="flex flex-col text-gray-400">
-                <li>
-                    <a class="hover:text-gray-200" href="/affiliate">Affiliate</a>
-                </li>
-                <li>
-                    <a class="hover:text-gray-200" href="/affiliate">About</a>
-                </li>
-                <li>
-                    <a class="hover:text-gray-200" href="/contact">Contact</a>
-                </li>
-                <li>
-                    <a class="hover:text-gray-200" href="/blog">Blog</a>
-                </li>
-                <li>
-                    <a class="hover:text-gray-200" href="/faq">Faq</a>
-                </li>
-            </ul>
-        </div>
-    
-        <div class="px-2 flex flex-col gap-2" (inView)="sec3View()" [@fadeIn]="sec3 ? 'visible' : 'hidden'">
-            <div class="text-[1.2rem]">More</div>
-            <ul class="text-gray-400">
-                <li>
-                    <a href="/terms-condition" class="hover:text-gray-200">Terms & Condition</a>
-                </li>
-                <li>
-                    <a href="/privacy-policy" class="hover:text-gray-200">Privacy Policy</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div>
+</footer>

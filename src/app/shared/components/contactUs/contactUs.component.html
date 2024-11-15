@@ -1,12 +1,12 @@
 <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-    <div class="mt-5 bg-[rgb(15,7,21)] w-full py-5 px-5 text-[rgb(255,255,255)] flex flex-col gap-2 items-center">
-        <div class="text-[3.5rem] sm_max:text-[3rem]" [@slideInLeft]="slideLeftAnimation ? 'visible' : 'hidden'" (inView)="onHeadInView()" inView><b>Contact {{ info }}</b></div>
-        <div class="flex justify-center w-[95%]" [@slideInBottom]="slideInBottomText ? 'visible' : 'hidden'" (inView)="onSliderInView()" inView>Questions, Doubts or Comments? Feel free to write here. We'd love to hear from you</div>
+    <div class="bg-[rgb(15,7,21)] w-full py-[3rem] sm:py-[5rem] px-[8.5%] text-[rgb(255,255,255)] flex flex-col gap-2 items-center">
+        <div class="text-[2.5rem] sm:text-[3.5rem]" [@slideInLeft]="slideLeftAnimation ? 'visible' : 'hidden'" (inView)="onHeadInView()" inView><b>Contact {{ info }}</b></div>
+        <div class="flex justify-center w-full" [@slideInBottom]="slideInBottomText ? 'visible' : 'hidden'" (inView)="onSliderInView()" inView>Questions, Doubts or Comments? Feel free to write here. We'd love to hear from you</div>
         <div class="flex flex-col items-center gap-2 w-full pt-5" [@fadeIn]="slideInBottomText ? 'visible' : 'hidden'" (inView)="onSliderInView()" inView>
             <div class="text-red-900" *ngIf="fullNameError && fullNameTouched">
                 Please enter your full name.
             </div>
-            <div class="flex gap-2 items-center w-[95%] max-w-[30rem]">
+            <div class="flex gap-2 items-center w-full max-w-[30rem]">
                 <input (blur)="onFullNameChange($event)" type="text" placeholder="Name" formControlName="name" class="w-full border border-[rgb(49,20,71)] outline-none rounded-md px-3 focus:bg-[rgb(24,11,34)] py-1 bg-[rgb(15,7,21)] text-[rgb(255,255,255)]">
             </div>
             <div class="text-red-900" *ngIf="emailError && emailTouched">
@@ -15,14 +15,14 @@
             <div class="text-red-900" *ngIf="emailErrorPattern && emailTouched">
                 Please enter a valid email address.
             </div>
-            <div class="flex gap-2 items-center w-[95%] max-w-[30rem]">
+            <div class="flex gap-2 items-center w-full max-w-[30rem]">
                 <input type="email" (blur)="onEmailChange($event)" placeholder="Email"  formControlName="email" class="w-full border border-[rgb(49,20,71)] outline-none rounded-md px-3 focus:bg-[rgb(24,11,34)] py-1 bg-[rgb(15,7,21)] text-[rgb(255,255,255)]">
             </div>
             <div class="text-red-900" *ngIf="messageError && messageTouched">
                 Please provide your feedback
             </div>
-            <div class="flex gap-2 w-[95%] max-w-[30rem] h-[5rem]">
-                <textarea name="" (blur)="onMessageChange($event)" placeholder="Message"  formControlName="message" class="w-full border border-[rgb(49,20,71)] outline-none rounded-md px-3 focus:bg-[rgb(24,11,34)] py-1 bg-[rgb(15,7,21)] text-[rgb(255,255,255)]"></textarea>
+            <div class="flex gap-2 w-full max-w-[30rem] h-[5rem]">
+                <textarea name="" (blur)="onMessageChange($event)" placeholder="Message"  formControlName="message" class="resize-none w-full border border-[rgb(49,20,71)] outline-none rounded-md px-3 focus:bg-[rgb(24,11,34)] py-1 bg-[rgb(15,7,21)] text-[rgb(255,255,255)]"></textarea>
             </div>
             <button [disabled]="contactForm.invalid" [@fadeIn]="fadeIn ? 'visible' : 'hidden'" (inView)="onFadeInInView()" inView class="mt-2 px-5 py-1 rounded-2xl active:scale-95 transition duration-100 ease-in-out" style="background-image: linear-gradient(to right, #762be7, #15053d);">SEND MESSAGE</button>
         </div>

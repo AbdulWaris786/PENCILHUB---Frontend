@@ -4,11 +4,13 @@ export const environment = {
     apiKey: 'your-dev-api-key'
 };
 
-const YOUTUBE_APIKEY = 'AIzaSyAo5H_M2tQRkGd8LKkq-pfL6kXou82oFso'
-// const YOUTUBE_APIKEY = 'AIzaSyCtU0VvXCvGzaSyuBUsccJabhvHkDeLQv0'
+const API_KEY = 'AIzaSyAo5H_M2tQRkGd8LKkq-pfL6kXou82oFso'
 const CHANNEL_ID = 'UCh1Mx3gFfUWtGNBKm-1yZLg'
 export const youtubeEnvironment = {
   production: false,
-  youtubeApiUrl: `https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${CHANNEL_ID}&key=${YOUTUBE_APIKEY}`,
-  videoApiUrl: `https://www.googleapis.com/youtube/v3/search?key=${YOUTUBE_APIKEY}&channelId=${CHANNEL_ID}&part=snippet,id&order=date&maxResults=7` 
+  youtubeApiUrl: `https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${CHANNEL_ID}&key=${API_KEY}`,
+  recentVideos : `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${CHANNEL_ID}&maxResults=50&order=date&type=video&key=${API_KEY}`,
+  videoApiUrl: `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${CHANNEL_ID}&maxResult=10order=date&type=video&key=${API_KEY}`,
+  filteredVideoUrl: `https://www.googleapis.com/youtube/v3/videos?part=snippet,contentDetails&key=${API_KEY}>`
+
 };

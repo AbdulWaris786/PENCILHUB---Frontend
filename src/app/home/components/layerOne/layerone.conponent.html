@@ -1,21 +1,16 @@
-
 <div 
     (inView)="onBannerTextInView()"
-    inView 
-    class="h-auto lg:h-[35rem] xl:h-screen w-full flex flex-col sm:flex-row items-center py-3 sm:bg-layer-one-backround bg-cover bg-center bg-no-repeat"
+    class="h-auto lg:h-screen max-h-[795px] w-full flex flex-col sm:flex-row items-center py-3 lg:py-0 sm:bg-layer-one-backround bg-cover bg-center bg-no-repeat overflow-hidden"
 >
-    <div 
-        id="text_div" 
-        class="py-2 sm:w-1/2 md:pl-[5%] lg:flex flex-col items-end gap-3" 
-    >
-        <div class="max-w-[34rem] flex justify-start sm:pr-10" [@fadeIn]="slideInLeftText ? 'visible' : 'hidden'">
-            <img [src]="pencilhubText" alt="" class="pl-16 lg:pl-8 pr-24 py-1">
+    <div class="py-10 sm:py-2 px-[8%] lg:px-[8.5%] sm:px-0 sm:w-1/2 lg:flex flex-col items-end lg:items-start gap-5">
+        <div class="sm:pl-[15%] lg:pl-0 max-w-[34rem] mt-[3.5rem] sm:mt-0 flex justify-center sm:justify-start" [@fadeIn]="slideInLeftText ? 'visible' : 'hidden'">
+            <img [src]="pencilhubText" class="min-w-[12rem] w-[15rem] max-w-[17rem]">
         </div>
         <div class="">
-            <div class="py-2 px-10 text-white text-center sm:text-start font-sans" [@slideInLeft]="slideInLeftText ? 'visible' : 'hidden'">
+            <div class="sm:pl-[15%] lg:pl-0 py-2 text-white text-center sm:text-start font-sans" [@slideInLeft]="slideInLeftText ? 'visible' : 'hidden'">
                 Join us to master video and photo editing, from basics to pro-level <br>Let's create something amazing together!
             </div>
-            <div class="w-full flex justify-center sm:justify-start pt-2 sm:px-10">
+            <div class="sm:pl-[15%] lg:pl-0 w-full flex justify-center sm:justify-start pt-2">
                 <button [@fadeIn]="slideInLeftText ? 'visible' : 'hidden'" class="bg-[rgb(132,78,242)] text-white text-center rounded-[8px] text-[20px] font-serif px-5 py-1 transition ease-in-out active:scale-[.98]" (click)="navigate()">
                     Join us on YouTube!
                 </button>
@@ -24,18 +19,17 @@
     </div>
     <div 
         id="img_div" 
-        (inView)="onBannerImageInView()"
-        inView 
+        (inView)="onBannerImageInView()" 
         class="w-full sm:w-1/2 sm:pt-10 pb-5 flex justify-center bg-layer-one-backround sm:bg-none bg-contain bg-center bg-no-repeat lg:flex lg:justify-start sm:mt-[6rem]"
     >
-        <div class="w-full max-w-[25rem] lg:max-w-[34rem] h-[20rem] lg:h-[22rem] px-12 pt-14 relative" [@scale]="slideInLeftText ? 'visible' : 'hidden'">
-            <div [@slideFromCenterAE]="showElements ? 'visible' : 'hidden'" class="bg-after-effect bg-contain bg-center bg-no-repeat h-[3rem] lg:h-[3.5rem] w-[3rem] lg:w-[3.5rem] rotate-[-10deg] absolute top-[63%] lg:top-[56%] left-[7%] lg:left-[12%] xl:left-[10%]"></div>
-            <div [@slideFromCenterPS]="showElements ? 'visible' : 'hidden'" class="bg-adobe-photoshop bg-contain bg-center bg-no-repeat h-[4.5rem] lg:h-[5.5rem] w-[4.5rem] lg:w-[5.5rem] rotate-[-10deg] absolute top-[38%] lg:top-[32%] left-[14%] lg:left-[19%] xl:left-[15%]"></div>
-            <div [@slideFromCenterME]="showElements ? 'visible' : 'hidden'" class="bg-adobe-media-encounder bg-contain bg-center bg-no-repeat h-[3rem] lg:h-[3.5rem] w-[3rem] lg:w-[3.5rem] rotate-[-10deg] absolute top-[18%] lg:top-[8%] left-[18%] lg:left-[20%] xl:left-[17%]"></div>
-            <div [@slideFromCenterLR]="showElements ? 'visible' : 'hidden'" class="bg-light-room bg-contain bg-center bg-no-repeat h-[3rem] lg:h-[4rem] w-[3rem] lg:w-[4rem] rotate-[15deg] absolute top-[16%] lg:top-[3%] right-[28%] lg:right-[30%] xl:right-[27%]"></div>
-            <div [@slideFromCenterAA]="showElements ? 'visible' : 'hidden'" class="bg-adobe-audition bg-contain bg-center bg-no-repeat h-[3rem] lg:h-[3.5rem] w-[3rem] lg:w-[3.5rem] rotate-[18deg] absolute top-[45%] lg:top-[32%] right-[24%] lg:right-[27%] xl:right-[24%]"></div>
-            <div [@slideFromCenterAP]="showElements ? 'visible' : 'hidden'" class="bg-adobe-premiere bg-contain bg-center bg-no-repeat h-[4rem] lg:h-[4.7rem] w-[4rem] lg:w-[4.7rem] rotate-[15deg] absolute top-[58%] lg:top-[52%] right-[9%] lg:right-[14%] xl:right-[11%]"></div>
-            <img [src]="bannerImg" alt="" class="absolute w-[80%] max-w-[20rem] lg:max-w-[24rem] h-[90%] lg:h-[110%] top-1/2 left-1/2 translate-x-[-50%] translate-y-[-33%] lg:translate-y-[-41%] xl:min-w-[30rem] xl:h-[130%]">
+        <div class="w-full max-w-[25rem] lg:max-w-[40rem] h-[20rem] lg:h-[22rem] px-12 pt-14 lg:mt-[3rem] xl:mt-[1.2rem] relative" [@scale]="slideInLeftText ? 'visible' : 'hidden'">
+            <div [@slideFromCenterAE]="showElements ? 'visible' : 'hidden'" class="bg-after-effect bg-contain bg-center bg-no-repeat h-[3rem] lg:h-[3.5rem] w-[3rem] lg:w-[3.5rem] rotate-[-10deg] absolute top-[63%]   sm:top-[56%] sm:left-[-1%] md:top-[52%]   lg:top-[54%] left-[7%] lg:left-[-10%]"></div>
+            <div [@slideFromCenterPS]="showElements ? 'visible' : 'hidden'" class="bg-adobe-photoshop bg-contain bg-center bg-no-repeat h-[4.5rem] lg:h-[5.5rem] w-[4.5rem] lg:w-[5.5rem] rotate-[-10deg] absolute top-[38%]   sm:top-[28%] sm:left-[8%] md:top-[24%]  lg:top-[22%] left-[14%] lg:left-[-3%]"></div>
+            <div [@slideFromCenterME]="showElements ? 'visible' : 'hidden'" class="bg-adobe-media-encounder bg-contain bg-center bg-no-repeat h-[3rem] lg:h-[3.5rem] w-[3rem] lg:w-[3.5rem] rotate-[-10deg] absolute top-[18%]  sm:top-[6%] sm:left-[14%] md:top-[-5%] lg:top-[-9%] left-[18%] lg:left-[-2%] "></div>
+            <div [@slideFromCenterLR]="showElements ? 'visible' : 'hidden'" class="bg-light-room bg-contain bg-center bg-no-repeat h-[3rem] lg:h-[4rem] w-[3rem] lg:w-[4rem] rotate-[15deg] absolute top-[16%] lg:top-[-13%]  sm:top-[5%] sm:right-[22%] md:top-[-5%]    right-[28%] lg:right-[30%]"></div>
+            <div [@slideFromCenterAA]="showElements ? 'visible' : 'hidden'" class="bg-adobe-audition bg-contain bg-center bg-no-repeat h-[3rem] lg:h-[3.5rem] w-[3rem] lg:w-[3.5rem] rotate-[18deg] absolute top-[45%] lg:top-[25%] right-[24%]  sm:top-[29%] sm:right-[16%] md:top-[23%]  lg:right-[27%]"></div>
+            <div [@slideFromCenterAP]="showElements ? 'visible' : 'hidden'" class="bg-adobe-premiere bg-contain bg-center bg-no-repeat h-[4rem] lg:h-[4.7rem] w-[4rem] lg:w-[4.7rem] rotate-[15deg] absolute top-[58%] lg:top-[52%] right-[9%]   sm:top-[51%] sm:right-[5%] md:top-[44%]   lg:right-[14%]"></div>
+            <img [src]="bannerImg" alt="" class="absolute w-[80%] h-[90%] max-w-[20rem] top-1/2 left-1/2 translate-x-[-50%] translate-y-[-33%]       sm:min-w-[100%] sm:h-[110%] sm:max-w-[22rem] sm:top-[36.2%]   md:min-w-[100%] md:h-[120%] md:top-[30%] md:max-w-[35rem]    lg:min-w-[90%] lg:max-w-[30rem] lg:h-[161%] lg:translate-x-[-61%] lg:translate-y-[-32%]   xl:h-[167%]">
         </div>
     </div>
 </div>

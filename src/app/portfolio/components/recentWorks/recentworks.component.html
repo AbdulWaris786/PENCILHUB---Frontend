@@ -1,5 +1,5 @@
-<div class="bg-[rgb(15,7,21)] w-full px-5 py-5 flex flex-col items-center gap-[1.5rem] text-[rgb(255,255,255)] overflow-hidden">
-    <div class="text-[2.3rem]" #heading><b>Recent Works</b></div>
+<div class="bg-[rgb(15,7,21)] w-full px-5 py-[3rem] sm:py-[5rem] flex flex-col items-center gap-[1.5rem] text-[rgb(255,255,255)] overflow-hidden">
+    <div class="text-[2.5rem] sm:text-[3.5rem]" #heading><b>Recent Works</b></div>
 
     <!-- Grid container -->
     <div class="grid place-items-center gap-10 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 w-full md:w-4/5 xl:w-3/4">
@@ -9,7 +9,15 @@
             class="h-[10rem] w-[17rem] rounded-md flex items-center justify-center"
             #contentElement
         >
-            <img [src]="content" alt="" class="h-full w-full rounded-md">
+            <iframe
+                [src]="'https://www.youtube.com/embed/' + content + '?controls=0&enablejsapi=1' | safeUrl"
+                frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                referrerpolicy="no-referrer-when-downgrade"
+                class="h-full w-full rounded-md"
+            >
+            </iframe>
         </div>
     </div>
 </div> 

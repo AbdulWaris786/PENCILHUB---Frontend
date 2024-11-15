@@ -7,6 +7,7 @@ import { CommonModule } from "@angular/common";
 import { LiveSubsComponent } from "./components/liveSubs/livesub.component";
 import { ReactiveFormsModule } from "@angular/forms";
 import { FooterComponent } from "./components/footer/footer.component";
+import { SafeUrlPipe } from "./safe-url.pipe";
 
 @NgModule({
     declarations:[
@@ -14,14 +15,16 @@ import { FooterComponent } from "./components/footer/footer.component";
         ConatactUsComponent,
         LiveSubsComponent,
         FooterComponent,
-        inViewDirective
+        inViewDirective,
+        SafeUrlPipe
     ],
     exports:[
         HeaderComponent,
         ConatactUsComponent,
         LiveSubsComponent,
         FooterComponent,
-        inViewDirective
+        inViewDirective,
+        SafeUrlPipe
     ],
     imports:[
         CommonModule,
