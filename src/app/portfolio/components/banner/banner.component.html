@@ -1,4 +1,4 @@
-<div class="h-auto sm:h-[28rem] max-h-[793px] lg:h-screen xl:h-screen w-full flex flex-col sm:flex-row items-center pt-3 sm:pt-1 sm:bg-layer-one-backround bg-cover bg-center bg-no-repeat text-white">
+<div class="h-auto sm:h-[28rem] max-h-[730px] lg:h-screen xl:h-screen w-full flex flex-col sm:flex-row items-center pt-3 sm:pt-1 sm:bg-layer-one-backround bg-cover bg-center bg-no-repeat text-white">
     <div id="text_div" class="pt-2 sm:w-1/2 px-[8.5%] mt-[4rem] sm:mt-0 sm:flex sm:justify-end" >
         <div class="lg:pl-[]" (inView)="onSlideIn()" [@slideInLeft]="slideInView ? 'visible' : 'hidden'">
             <div class="text-center sm:text-start max-w-[20rem] xl:max-w-[25rem] text-[2.5rem] sm:text-[3.5rem] xl:text-[3rem]">
@@ -10,7 +10,7 @@
         </div>
     </div>
     <div class="w-full sm:w-1/2 sm:h-full flex justify-center sm:justify-start bg-layer-one-backround sm:bg-none bg-contain bg-center bg-no-repeat" (inView)="onFadeIn()" [@fadeIMG]="slideInView ? 'visible' : 'hidden'">
-        <img [src]="bannerImg" alt="" class="w-[80%] sm:h-full max-w-[20rem] sm:max-w-[33rem] sm:mt-10 h-[90%] lg:h-[44rem] xl:h-[44rem] lg:w-[35rem] lg:mt-[5.4rem] xl:min-w-[30rem]">
+        <img [src]="bannerImg" alt="" class="sm:h-full max-w-[20rem] sm:max-w-[33rem] sm:mt-10 h-[90%] lg:h-[44rem] xl:h-[44rem] lg:w-[37rem] lg:mt-[5.4rem]">
     </div>
 </div>
 

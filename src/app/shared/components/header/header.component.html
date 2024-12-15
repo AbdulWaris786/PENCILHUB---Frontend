@@ -25,26 +25,31 @@
                                         <a routerLink="/portfolio" (click)="onHeaderNavigate('')" class="py-2 px-3">Portfolio</a>
                                     </li>
                                     <li [ngClass]="{'text-gray-400  hover:text-gray-200' : !isActive('/free-luts')}">
-                                        <button (click)="headerLiClicked('Luts')" class="py-2 flex px-3 hover:cursor-pointer">Free Luts <div *ngIf="!LutsliClicked" class="pl-2">></div> <div *ngIf="LutsliClicked" class="pl-2">v</div></button>
+                                        <button (click)="headerLiClicked('Luts')" class="py-2 flex px-3 hover:cursor-pointer">Free LUTs Filter <div *ngIf="!LutsliClicked" class="pl-2">></div> <div *ngIf="LutsliClicked" class="pl-2">v</div></button>
                                     </li>
-                                        <li *ngIf="LutsliClicked" (click)="onHeaderNavigate('cinematic-luts')" class="text-gray-400 hover:text-gray-200 px-2 pl-9 hover:cursor-pointer">Cinematic LUTs</li>
-                                        <li *ngIf="LutsliClicked" (click)="onHeaderNavigate('free-luts-for-vn-pr-etc')" class="text-gray-400 hover:text-gray-200 pl-9 px-2 hover:cursor-pointer">free LUTs for Vn, Pr etc...</li>
+                                        <li *ngIf="LutsliClicked" (click)="onHeaderNavigate('free-cinematic-lut-pack')" class="text-gray-400 hover:text-gray-200 px-2 pl-9 hover:cursor-pointer">Free Moody LUTs Pack</li>
+                                        <li *ngIf="LutsliClicked" (click)="onHeaderNavigate('free-moody-lut-filter-pack')" class="text-gray-400 hover:text-gray-200 pl-9 px-2 hover:cursor-pointer">5 Cinematic LUT Filters</li>
+                                        <li *ngIf="LutsliClicked" (click)="onHeaderNavigate('5-best-free-lut-filters')" class="text-gray-400 hover:text-gray-200 pl-9 px-2 hover:cursor-pointer">5 Moody LUTS PACK</li>
+                                        
                                         <li [ngClass]="{'text-gray-400 hover:text-gray-200' : !isActive('/lr-presets')}">
-                                        <button (click)="headerLiClicked('Lr')" class="py-2 px-3 flex hover:cursor-pointer">Lr Presets <div *ngIf="!LRliClicked" class="pl-2">></div> <div *ngIf="LRliClicked" class="pl-2">v</div></button>  
-                                    </li>
-                                        <li *ngIf="LRliClicked" (click)="onHeaderNavigate('5-moody-lightroom-presets')" class="text-gray-400 hover:text-gray-200 px-2 pl-9 hover:cursor-pointer">5 Moody Lightroom Presets</li>
-                                        <li *ngIf="LRliClicked" (click)="onHeaderNavigate('samkolder-lr-presets')" class="text-gray-400 hover:text-gray-200 px-2 pl-9 hover:cursor-pointer">Sam Kolder Lr Presets</li>
-                                        <li *ngIf="LRliClicked" (click)="onHeaderNavigate('elementor-605')" class="text-gray-400 hover:text-gray-200 px-2 pl-9 hover:cursor-pointer">11 Free Premium Lr Presets</li>
+                                            <button (click)="headerLiClicked('Lr')" class="py-2 px-3 flex hover:cursor-pointer">Lr Presets <div *ngIf="!LRliClicked" class="pl-2">></div> <div *ngIf="LRliClicked" class="pl-2">v</div></button>  
+                                        </li>
+                                        <li *ngIf="LRliClicked" (click)="onHeaderNavigate('11-free-premium-lightroom-presets')" class="text-gray-400 hover:text-gray-200 px-2 pl-9 hover:cursor-pointer">11 Free Premium Lightroom Presets</li>
+                                        <li *ngIf="LRliClicked" (click)="onHeaderNavigate('sam-kolder-inspired-lightroom-presets')" class="text-gray-400 hover:text-gray-200 px-2 pl-9 hover:cursor-pointer">Sam Kolder Inspired Lightroom Presets</li>
+                                        <li *ngIf="LRliClicked" (click)="onHeaderNavigate('best-free-lightroom-presets')" class="text-gray-400 hover:text-gray-200 px-2 pl-9 hover:cursor-pointer">5 Free Lightroom Presets</li>
+                                        <li *ngIf="LRliClicked" (click)="onHeaderNavigate('free-moody-green-lightroom-presets')" class="text-gray-400 hover:text-gray-200 px-2 pl-9 hover:cursor-pointer">Moody Green Presets</li>
+                                        <li *ngIf="LRliClicked" (click)="onHeaderNavigate('night-lightroom-presets')" class="text-gray-400 hover:text-gray-200 px-2 pl-9 hover:cursor-pointer">Night Lightroom Presets</li>
                                     <li [ngClass]="{'text-gray-400 hover:text-gray-200' : !isActive('/mod-apk')}">
                                         <button (click)="headerLiClicked('Mod')" class="py-2 pl-3 flex hover:cursor-pointer">Mod apk <div *ngIf="!ModapkliClicked" class="pl-2">></div> <div *ngIf="ModapkliClicked" class="pl-2">v</div></button>
                                     </li>
-                                        <li *ngIf="ModapkliClicked" (click)="onHeaderNavigate('kinemaster-apk')" class="text-gray-400 hover:text-gray-200 pl-9 px-2 hover:cursor-pointer">Kinemaster Apk</li>
+                                    <li *ngIf="ModapkliClicked" (click)="onHeaderNavigate('picsart-photo-editor-premium-features-guide-2024')" class="text-gray-400 hover:text-gray-200 pl-9 px-2 hover:cursor-pointer">PicsArt</li>
+                                        <li *ngIf="ModapkliClicked" (click)="onHeaderNavigate('kinemaster-mod-apk-v7-3-11-latest-version-premium-unlocked')" class="text-gray-400 hover:text-gray-200 pl-9 px-2 hover:cursor-pointer">KineMaster</li>
+                                        <li *ngIf="ModapkliClicked" (click)="onHeaderNavigate('capcut-video-editor-mod-apk')" class="text-gray-400 hover:text-gray-200 pl-9 px-2 hover:cursor-pointer">CapCut</li>
+                                        <li *ngIf="ModapkliClicked" (click)="onHeaderNavigate('elementor-692')" class="text-gray-400 hover:text-gray-200 pl-9 px-2 hover:cursor-pointer">Lightroom</li>
+                                        <li *ngIf="ModapkliClicked" (click)="onHeaderNavigate('alight-motion-pro-mod-apk-2024-complete-guide-no-watermark')" class="text-gray-400 hover:text-gray-200 pl-9 px-2 hover:cursor-pointer">AlightMotion</li>
                                         <li *ngIf="ModapkliClicked" (click)="onHeaderNavigate('vsco-2')" class="text-gray-400 hover:text-gray-200 pl-9 px-2 hover:cursor-pointer">VSCO</li>
-                                        <li *ngIf="ModapkliClicked" (click)="onHeaderNavigate('inshot')" class="text-gray-400 hover:text-gray-200 pl-9 px-2 hover:cursor-pointer">inshot</li>
                                         <li *ngIf="ModapkliClicked" (click)="onHeaderNavigate('ps-touch')" class="text-gray-400 hover:text-gray-200 pl-9 px-2 hover:cursor-pointer">Ps touch</li>
-                                        <li *ngIf="ModapkliClicked" (click)="onHeaderNavigate('picsart')" class="text-gray-400 hover:text-gray-200 pl-9 px-2 hover:cursor-pointer">Picsart</li>
-                                        <li *ngIf="ModapkliClicked" (click)="onHeaderNavigate('canva')" class="text-gray-400 hover:text-gray-200 pl-9 px-2 hover:cursor-pointer">Canva</li>
-                                        <li *ngIf="ModapkliClicked" (click)="onHeaderNavigate('alight-motion')" class="text-gray-400 hover:text-gray-200 pl-9 px-2 hover:cursor-pointer">Alight motion</li>
+                                        <li *ngIf="ModapkliClicked" (click)="onHeaderNavigate('inshot-2')" class="text-gray-400 hover:text-gray-200 pl-9 px-2 hover:cursor-pointer">inshot</li>
                                     <li [ngClass]="{'text-gray-400 hover:text-gray-200' : !isActive('/about-us')}">
                                         <button (click)="onHeaderNavigate('about-us')" class="py-2 px-3 hover:cursor-pointer">About Us</button>
                                     </li>
@@ -82,171 +87,25 @@
         </nav>
     </header>
 
-    <ul (mouseenter)="LutsliHovered = true" (mouseleave)="LutsliHovered = false" class="fixed right-[23%] top-[3.5rem] xl:right-[20%] xl:top-[4.5rem] 2xl:top-[5rem] 2xl:right-[22%] 3xl:top-[6.3rem] 3xl:right-[18%] z-[10000] bg-violet-950  py-1 rounded-md">
-        <li *ngIf="LutsliHovered" (click)="onHeaderNavigate('cinematic-luts')" class="text-gray-400 hover:text-gray-200 py-2 px-4 hover:cursor-pointer">Cinematic LUTs</li>
-        <li *ngIf="LutsliHovered" (click)="onHeaderNavigate('free-luts-for-vn-pr-etc')" class="text-gray-400 hover:text-gray-200 py-2 px-4 hover:cursor-pointer">free LUTs for Vn, Pr etc...</li>
+    <ul (mouseenter)="LutsliHovered = true" (mouseleave)="LutsliHovered = false" class="fixed right-[23%] top-[3.5rem] xl:right-[20%] xl:top-[4.15rem] 2xl:top-[4.5rem] 2xl:right-[22%] 3xl:top-[6.3rem] 3xl:right-[18%] z-[10000] bg-violet-950  py-1 rounded-md">
+        <li *ngIf="LutsliHovered" (click)="onHeaderNavigate('free-cinematic-lut-pack')" class="text-gray-400 hover:text-gray-200 py-2 px-4 hover:cursor-pointer">Free Moody LUTs Pack</li>
+        <li *ngIf="LutsliHovered" (click)="onHeaderNavigate('free-moody-lut-filter-pack')" class="text-gray-400 hover:text-gray-200 py-2 px-4 hover:cursor-pointer">5 Cinematic LUT Filters</li>
+        <li *ngIf="LutsliHovered" (click)="onHeaderNavigate('5-best-free-lut-filters')" class="text-gray-400 hover:text-gray-200 py-2 px-4 hover:cursor-pointer">5 Moody LUTS PACK</li>
     </ul>
-    <ul (mouseenter)="LRliHovered = true" (mouseleave)="LRliHovered = false" class="fixed right-[12%] top-[3.5rem] xl:right-[11%] xl:top-[4.5rem] 2xl:top-[5rem] 3xl:top-[6.3rem] 2xl:right-[13%] z-[10000] bg-violet-950  py-1 rounded-md">
-        <li *ngIf="LRliHovered" (click)="onHeaderNavigate('5-moody-lightroom-presets')" class="text-gray-400 hover:text-gray-200 py-2 px-4 hover:cursor-pointer">5 Moody Lightroom Presets</li>
-        <li *ngIf="LRliHovered" (click)="onHeaderNavigate('samkolder-lr-presets')" class="text-gray-400 hover:text-gray-200 py-2 px-4 hover:cursor-pointer">Sam Kolder Lr Presets</li>
-        <li *ngIf="LRliHovered" (click)="onHeaderNavigate('elementor-605')" class="text-gray-400 hover:text-gray-200 py-2 px-4 hover:cursor-pointer">11 Free Premium Lr Presets</li>
+    <ul (mouseenter)="LRliHovered = true" (mouseleave)="LRliHovered = false" class="fixed right-[12%] top-[3.5rem] xl:right-[11%] xl:top-[4.15rem] 2xl:top-[4.5rem] 3xl:top-[6.3rem] 2xl:right-[13%] z-[10000] bg-violet-950  py-1 rounded-md">
+        <li *ngIf="LRliHovered" (click)="onHeaderNavigate('11-free-premium-lightroom-presets')" class="text-gray-400 hover:text-gray-200 py-2 px-4 hover:cursor-pointer">11 Free Premium Lightroom Presets</li>
+        <li *ngIf="LRliHovered" (click)="onHeaderNavigate('sam-kolder-inspired-lightroom-presets')" class="text-gray-400 hover:text-gray-200 py-2 px-4 hover:cursor-pointer">Sam Kolder Inspired Lightroom Presets</li>
+        <li *ngIf="LRliHovered" (click)="onHeaderNavigate('best-free-lightroom-presets')" class="text-gray-400 hover:text-gray-200 py-2 px-4 hover:cursor-pointer">5 Free Lightroom Presets</li>
+        <li *ngIf="LRliHovered" (click)="onHeaderNavigate('free-moody-green-lightroom-presets')" class="text-gray-400 hover:text-gray-200 py-2 px-4 hover:cursor-pointer">Moody Green Presets</li>
+        <li *ngIf="LRliHovered" (click)="onHeaderNavigate('night-lightroom-presets')" class="text-gray-400 hover:text-gray-200 py-2 px-4 hover:cursor-pointer">Night Lightroom Presets</li>
     </ul>
-    <ul (mouseenter)="ModapkliHovered = true" (mouseleave)="ModapkliHovered = false" class="fixed right-[11%] top-[3.5rem] xl:right-[10%] xl:top-[4.5rem] 2xl:top-[5rem] 3xl:top-[6.3rem] 2xl:right-[12.2%] z-[10000] bg-violet-950  py-1 rounded-md">
-        <li *ngIf="ModapkliHovered" (click)="onHeaderNavigate('kinemaster-apk')" class="text-gray-400 hover:text-gray-200 py-2 px-4 hover:cursor-pointer">Kinemaster Apk</li>
+    <ul (mouseenter)="ModapkliHovered = true" (mouseleave)="ModapkliHovered = false" class="fixed right-[11%] top-[3.5rem] xl:right-[10%] xl:top-[4.15rem] 2xl:top-[4.5rem] 3xl:top-[6.3rem] 2xl:right-[12.2%] z-[10000] bg-violet-950  py-1 rounded-md">
+        <li *ngIf="ModapkliHovered" (click)="onHeaderNavigate('picsart-photo-editor-premium-features-guide-2024')" class="text-gray-400 hover:text-gray-200 py-2 px-4 hover:cursor-pointer">PicAart</li>
+        <li *ngIf="ModapkliHovered" (click)="onHeaderNavigate('kinemaster-mod-apk-v7-3-11-latest-version-premium-unlocked')" class="text-gray-400 hover:text-gray-200 py-2 px-4 hover:cursor-pointer">KineMaster</li>
+        <li *ngIf="ModapkliHovered" (click)="onHeaderNavigate('capcut-video-editor-mod-apk')" class="text-gray-400 hover:text-gray-200 py-2 px-4 hover:cursor-pointer">CapCut</li>
+        <li *ngIf="ModapkliHovered" (click)="onHeaderNavigate('elementor-692')" class="text-gray-400 hover:text-gray-200 py-2 px-4 hover:cursor-pointer">Lightroom</li>
+        <li *ngIf="ModapkliHovered" (click)="onHeaderNavigate('alight-motion-pro-mod-apk-2024-complete-guide-no-watermark')" class="text-gray-400 hover:text-gray-200 py-2 px-4 hover:cursor-pointer">AlightMotion</li>
         <li *ngIf="ModapkliHovered" (click)="onHeaderNavigate('vsco-2')" class="text-gray-400 hover:text-gray-200 py-2 px-4 hover:cursor-pointer">VSCO</li>
-        <li *ngIf="ModapkliHovered" (click)="onHeaderNavigate('inshot')" class="text-gray-400 hover:text-gray-200 py-2 px-4 hover:cursor-pointer">inshot</li>
         <li *ngIf="ModapkliHovered" (click)="onHeaderNavigate('ps-touch')" class="text-gray-400 hover:text-gray-200 py-2 px-4 hover:cursor-pointer">Ps touch</li>
-        <li *ngIf="ModapkliHovered" (click)="onHeaderNavigate('picsart')" class="text-gray-400 hover:text-gray-200 py-2 px-4 hover:cursor-pointer">Picsart</li>
-        <li *ngIf="ModapkliHovered" (click)="onHeaderNavigate('canva')" class="text-gray-400 hover:text-gray-200 py-2 px-4 hover:cursor-pointer">Canva</li>
-        <li *ngIf="ModapkliHovered" (click)="onHeaderNavigate('alight-motion')" class="text-gray-400 hover:text-gray-200 py-2 px-4 hover:cursor-pointer">Alight motion</li>
+        <li *ngIf="ModapkliHovered" (click)="onHeaderNavigate('inshot-2')" class="text-gray-400 hover:text-gray-200 py-2 px-4 hover:cursor-pointer">inshot</li>
     </ul>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- 
-
-    <header class="w-full z-[1000]" [ngClass]="{'scrolled-header': hasScrolled}">
-        <nav class="relative">
-            <div class="px-[8%] 2xl:px-[11%] flex justify-between">
-                <div class="flex items-start" [@fadeIn]="headLi ? 'visible' : 'hidden'">
-                    <img [src]="pencilhub_watermark" class="w-[150px] h-[70px] sm:w-[170px] xl:h-[100px] xl:w-[200px] 2xl:h-[120px] 2xl:w-[230px] 3xl:h-[150px] 3xl:w-[290px]" alt="" />
-                </div>
-                <div class="flex items-center" (inView)="headLiView()">
-                    <button class="inline-flex items-center text-[1.4rem] rounded-md text-sm lg:hidden outline-none text-gray-300 bg-transparent bg-opacity-0 bg-none"> 
-                        <svg *ngIf="!togglePopup" class="w-6 mt-[6px] h-6 bg-none" (click)="onHeaderBar()" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" [@fadeIn]="headLi ? 'visible' : 'hidden'">
-                            <path fill-rule="evenodd" fill="currentColor" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
-                        </svg>
-                        <svg *ngIf="togglePopup" (click)="onHeaderBar()" class="w-6 mt-[3px] h-6 bg-none" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" fill="currentColor" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                        </svg>
-                    </button>
-                    <div *ngIf="togglePopup" class="lg:hidden absolute top-[4.5rem] right-0 w-screen ">
-                        <div (inView)="onInView()" [@slideLeft]="slideInLeftText ? 'visible' : 'hidden'" class="absolute right-0 w-screen max-w-[30rem] bg-black bg-opacity-95 h-screen z-[5] rounded-tl-xl">
-                            <div class="w-full h-auto px-5">
-        
-                                <ul class="flex flex-col gap-5 py-2 px-2 pt-5">  
-                                    <li [routerLinkActive]="['text-white']" [ngClass]="{'text-gray-400 hover:text-gray-200' : !isActive('/')}" [routerLinkActiveOptions]="{ exact : true }">
-                                        <a (click)="onHeaderBar()" routerLink="/" class="py-2 px-3">Home</a>   
-                                    </li>
-                                    <li [routerLinkActive]="['text-white']" [ngClass]="{'text-gray-400' : !isActive('/portfolio')}">
-                                        <a (click)="onHeaderBar()" routerLink="/portfolio" class="py-2 px-3">Portfolio</a>
-                                    </li>
-                                    <li [routerLinkActive]="['text-white']" [ngClass]="{'text-gray-400' : !isActive('/free-luts')}">
-                                        <a (click)="onHeaderBar()" routerLink="/free-luts" class="py-2 px-3">Free Luts</a>
-                                    </li>
-                                    <li [routerLinkActive]="['text-white']" [ngClass]="{'text-gray-400' : !isActive('/lr-presets')}">
-                                        <a (click)="onHeaderBar()" routerLink="/lr-presets" class="py-2 px-3">Lr Presets</a>
-                                    </li>
-                                    <li [routerLinkActive]="['text-white']" [ngClass]="{'text-gray-400' : !isActive('/about-us')}">
-                                        <a (click)="onHeaderBar()" routerLink="/about-us" class="py-2 px-3">About Us</a>
-                                    </li>
-                                </ul>
-            
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="hidden lg:flex justify-center">
-                        <ul class="flex gap-5 py-2 px-2" [@slideLeft]="headLi ? 'visible' : 'hidden'">
-                            <li [routerLinkActive]="['text-white']" [ngClass]="{'text-gray-400 hover:text-gray-200' : !isActive('/')}" [routerLinkActiveOptions]="{ exact : true }">
-                                <a routerLink="/" class="py-2 pl-3">Home</a>
-                            </li>
-                            <li [routerLinkActive]="['text-white']" [ngClass]="{'text-gray-400 hover:text-gray-200' : !isActive('/portfolio')}">
-                                <a routerLink="/portfolio" class="py-2 pl-3">Portfolio</a>
-                            </li>
-                            <li [routerLinkActive]="['text-white']" [ngClass]="{'text-gray-400 hover:text-gray-200' : !isActive('/free-luts')}">
-                                <a routerLink="/free-luts" class="py-2 pl-3">Free Luts</a>
-                            </li>
-                            <li [routerLinkActive]="['text-white']" [ngClass]="{'text-gray-400 hover:text-gray-200' : !isActive('/lr-presets')}">
-                                <a routerLink="/lr-presets" class="py-2 pl-3">Lr Presets</a>
-                            </li>
-                            <li [routerLinkActive]="['text-white']" [ngClass]="{'text-gray-400 hover:text-gray-200' : !isActive('/about-us')}">
-                                <a routerLink="/about-us" class="py-2 pl-3">About Us</a>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                </div>
-            </div>
-        </nav>
-    </header>
-    
-    <header class="fixed w-full z-[1000] hidden-header" [ngClass]="{'slide-down': hasScrolled}">
-        <nav class="relative">
-            <div class="px-[8%] 2xl:px-[11%] flex justify-between">
-                <div class="flex items-start" [@fadeIn]="headLi ? 'visible' : 'hidden'">
-                    <img [src]="pencilhub_watermark" class="w-[150px] h-[70px] sm:w-[170px] xl:h-[100px] xl:w-[200px] 2xl:h-[120px] 2xl:w-[230px] 3xl:h-[150px] 3xl:w-[290px]" alt="" />
-                </div>
-                <div class="flex items-center" (inView)="headLiView()">
-                    <button class="inline-flex items-center text-[1.4rem] rounded-md text-sm lg:hidden outline-none text-gray-300 bg-transparent bg-opacity-0 bg-none"> 
-                        <svg *ngIf="!togglePopup" class="w-6 mt-[6px] h-6 bg-none" (click)="onHeaderBar()" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" [@fadeIn]="headLi ? 'visible' : 'hidden'">
-                            <path fill-rule="evenodd" fill="currentColor" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
-                        </svg>
-                        <svg *ngIf="togglePopup" (click)="onHeaderBar()" class="w-6 mt-[3px] h-6 bg-none" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" fill="currentColor" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                        </svg>
-                    </button>
-                    <div *ngIf="togglePopup" class="lg:hidden absolute top-[4.5rem] right-0 w-screen ">
-                        <div (inView)="onInView()" [@slideLeft]="slideInLeftText ? 'visible' : 'hidden'" class="absolute right-0 w-screen max-w-[30rem] bg-black bg-opacity-95 h-screen z-[5] rounded-tl-xl">
-                            <div class="w-full h-auto px-5">
-        
-                                <ul class="flex flex-col gap-5 py-2 px-2 pt-5">  
-                                    <li [routerLinkActive]="['text-white']" [ngClass]="{'text-gray-400 hover:text-gray-200' : !isActive('/')}" [routerLinkActiveOptions]="{ exact : true }">
-                                        <a (click)="onHeaderBar()" routerLink="/" class="py-2 px-3">Home</a>   
-                                    </li>
-                                    <li [routerLinkActive]="['text-white']" [ngClass]="{'text-gray-400' : !isActive('/portfolio')}">
-                                        <a (click)="onHeaderBar()" routerLink="/portfolio" class="py-2 px-3">Portfolio</a>
-                                    </li>
-                                    <li [routerLinkActive]="['text-white']" [ngClass]="{'text-gray-400' : !isActive('/free-luts')}">
-                                        <a (click)="onHeaderBar()" routerLink="/free-luts" class="py-2 px-3">Free Luts</a>
-                                    </li>
-                                    <li [routerLinkActive]="['text-white']" [ngClass]="{'text-gray-400' : !isActive('/lr-presets')}">
-                                        <a (click)="onHeaderBar()" routerLink="/lr-presets" class="py-2 px-3">Lr Presets</a>
-                                    </li>
-                                    <li [routerLinkActive]="['text-white']" [ngClass]="{'text-gray-400' : !isActive('/about-us')}">
-                                        <a (click)="onHeaderBar()" routerLink="/about-us" class="py-2 px-3">About Us</a>
-                                    </li>
-                                </ul>
-            
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="hidden lg:flex justify-center">
-                        <ul class="flex gap-5 py-2 px-2" [@slideLeft]="headLi ? 'visible' : 'hidden'">
-                            <li [routerLinkActive]="['text-white']" [ngClass]="{'text-gray-400 hover:text-gray-200' : !isActive('/')}" [routerLinkActiveOptions]="{ exact : true }">
-                                <a routerLink="/" class="py-2 pl-3">Home</a>
-                            </li>
-                            <li [routerLinkActive]="['text-white']" [ngClass]="{'text-gray-400 hover:text-gray-200' : !isActive('/portfolio')}">
-                                <a routerLink="/portfolio" class="py-2 pl-3">Portfolio</a>
-                            </li>
-                            <li [routerLinkActive]="['text-white']" [ngClass]="{'text-gray-400 hover:text-gray-200' : !isActive('/free-luts')}">
-                                <a routerLink="/free-luts" class="py-2 pl-3">Free Luts</a>
-                            </li>
-                            <li [routerLinkActive]="['text-white']" [ngClass]="{'text-gray-400 hover:text-gray-200' : !isActive('/lr-presets')}">
-                                <a routerLink="/lr-presets" class="py-2 pl-3">Lr Presets</a>
-                            </li>
-                            <li [routerLinkActive]="['text-white']" [ngClass]="{'text-gray-400 hover:text-gray-200' : !isActive('/about-us')}">
-                                <a routerLink="/about-us" class="py-2 pl-3">About Us</a>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                </div>
-            </div>
-        </nav>
-    </header>
-    -->

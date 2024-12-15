@@ -4,7 +4,7 @@ export const environment = {
   apiKey: 'your-prod-api-key'
 };
 
-const API_KEY = 'AIzaSyAo5H_M2tQRkGd8LKkq-pfL6kXou82oFsos'
+const API_KEY = 'AIzaSyAo5H_M2tQRkGd8LKkq-pfL6kXou82oFso'
 const CHANNEL_ID = 'UCh1Mx3gFfUWtGNBKm-1yZLg'
 
 export const youtubeEnvironment = {

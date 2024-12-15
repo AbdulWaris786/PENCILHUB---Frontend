@@ -1,6 +1,6 @@
 <div 
     (inView)="onBannerTextInView()"
-    class="h-auto lg:h-screen max-h-[795px] w-full flex flex-col sm:flex-row items-center py-3 lg:py-0 sm:bg-layer-one-backround bg-cover bg-center bg-no-repeat overflow-hidden"
+    class="h-auto lg:h-screen lg:max-h-[730px] w-full flex flex-col sm:flex-row items-center py-3 lg:py-0 sm:bg-layer-one-backround bg-cover bg-center bg-no-repeat overflow-hidden"
 >
     <div class="py-10 sm:py-2 px-[8%] lg:px-[8.5%] sm:px-0 sm:w-1/2 lg:flex flex-col items-end lg:items-start gap-5">
         <div class="sm:pl-[15%] lg:pl-0 max-w-[34rem] mt-[3.5rem] sm:mt-0 flex justify-center sm:justify-start" [@fadeIn]="slideInLeftText ? 'visible' : 'hidden'">
@@ -29,7 +29,8 @@
             <div [@slideFromCenterLR]="showElements ? 'visible' : 'hidden'" class="bg-light-room bg-contain bg-center bg-no-repeat h-[3rem] lg:h-[4rem] w-[3rem] lg:w-[4rem] rotate-[15deg] absolute top-[16%] lg:top-[-13%]  sm:top-[5%] sm:right-[22%] md:top-[-5%]    right-[28%] lg:right-[30%]"></div>
             <div [@slideFromCenterAA]="showElements ? 'visible' : 'hidden'" class="bg-adobe-audition bg-contain bg-center bg-no-repeat h-[3rem] lg:h-[3.5rem] w-[3rem] lg:w-[3.5rem] rotate-[18deg] absolute top-[45%] lg:top-[25%] right-[24%]  sm:top-[29%] sm:right-[16%] md:top-[23%]  lg:right-[27%]"></div>
             <div [@slideFromCenterAP]="showElements ? 'visible' : 'hidden'" class="bg-adobe-premiere bg-contain bg-center bg-no-repeat h-[4rem] lg:h-[4.7rem] w-[4rem] lg:w-[4.7rem] rotate-[15deg] absolute top-[58%] lg:top-[52%] right-[9%]   sm:top-[51%] sm:right-[5%] md:top-[44%]   lg:right-[14%]"></div>
-            <img [src]="bannerImg" alt="" class="absolute w-[80%] h-[90%] max-w-[20rem] top-1/2 left-1/2 translate-x-[-50%] translate-y-[-33%]       sm:min-w-[100%] sm:h-[110%] sm:max-w-[22rem] sm:top-[36.2%]   md:min-w-[100%] md:h-[120%] md:top-[30%] md:max-w-[35rem]    lg:min-w-[90%] lg:max-w-[30rem] lg:h-[161%] lg:translate-x-[-61%] lg:translate-y-[-32%]   xl:h-[167%]">
+            <!-- <img [src]="bannerImg" alt="" class="absolute w-[80%] h-[90%] max-w-[20rem] top-1/2 left-1/2 translate-x-[-50%] translate-y-[-33%]       sm:min-w-[100%] sm:h-[110%] sm:max-w-[22rem] sm:top-[36.2%]   md:min-w-[100%] md:h-[120%] md:top-[30%] md:max-w-[35rem]    lg:min-w-[90%] lg:max-w-[30rem] lg:h-[161%] lg:translate-x-[-61%] lg:translate-y-[-32%]   xl:h-[167%]"> -->
+            <img [src]="bannerImg" alt="" class="absolute w-[80%] h-[120%] max-w-[20rem] top-1/2 left-1/2 translate-x-[-50%] translate-y-[-33%]      sm:h-[110%] sm:max-w-[22rem] sm:top-[36.2%]   md:h-[120%] md:top-[30%] md:max-w-[35rem]    lg:w-[90%] lg:max-w-[32rem] lg:h-[173%] lg:translate-x-[-61%] lg:translate-y-[-42%]   xl:h-[183%]">
         </div>
     </div>
 </div>

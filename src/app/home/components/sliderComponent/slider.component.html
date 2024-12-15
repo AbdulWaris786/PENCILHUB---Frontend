@@ -49,7 +49,7 @@
     class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-[999999999]"
     (click)="popupAction()"
 >
-    <div class="bg-white w-[90%] md:w-[70%] min-h-[70%] h-auto rounded-lg">
-        <iframe [src]="clickedVideo" class="w-full h-full" frameborder="0"></iframe>
+    <div class="bg-white w-[90%] md:w-[70%] h-auto rounded-lg flex">
+        <iframe [src]="clickedVideo" class="w-full h-full min-h-[25rem] md:min-h-[35rem]" frameborder="0"></iframe>
     </div>
 </div>
