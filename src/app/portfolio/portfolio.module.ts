@@ -7,6 +7,8 @@ import { WorkedCompaniesComponent } from "./components/workedCompanies/workedCom
 import { ShowReelComponent } from "./components/showReel/showReel.component";
 import { CommonModule } from "@angular/common";
 import { BannerComponent } from "./components/banner/banner.component";
+import { AboutMe } from "./components/about-me/aboutMe.component";
+import { PosterWorks } from "./components/poster-work/poster.component";
 
 @NgModule({
     declarations: [
@@ -14,13 +16,15 @@ import { BannerComponent } from "./components/banner/banner.component";
         RecentWorksComponent,
         WorkedCompaniesComponent,
         ShowReelComponent,  
-        BannerComponent
+        BannerComponent,
+        AboutMe,
+        PosterWorks
     ],
     imports: [
         HomeModule,
         SharedModule,
         CommonModule,
-        SharedModule
+        SharedModule,
     ],
     exports: [
         MainPagePortfolio

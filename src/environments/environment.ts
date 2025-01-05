@@ -5,7 +5,7 @@ export const environment = {
 };
 
 // const API_KEY = 'AIzaSyAo5H_M2tQRkGd8LKkq-pfL6kXou82oFso'
-const API_KEY = 'AIzaSyCtU0VvXCvGzaSyuBUsccJabhvHkDeLQv0'
+const API_KEY = 'AIzaSyCtU0VvXCvGzaSyuBUsccJabhvHkDeLQv0-'
 const CHANNEL_ID = 'UCh1Mx3gFfUWtGNBKm-1yZLg'
 
 export const youtubeEnvironment = {

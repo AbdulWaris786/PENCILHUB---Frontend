@@ -1,22 +1,22 @@
 <footer class="px-[1px] xl:px-[3px]">
-    <div class="bg-[rgb(15,7,21)] text-[hsl(0,0%,100%)] py-[3rem] sm:py-[5rem] flex flex-col sm:flex-row sm:items-center gap-8 px-[8%] 2xl:px-[] ml-1">
+    <div class="bg-black text-[hsl(0,0%,100%)] py-[3rem] sm:py-[5rem] flex flex-col sm:flex-row sm:items-center gap-8 px-[8%] 2xl:px-[] ml-1">
         <div class="sm:w-1/2 text-gray-400" (inView)="sec1View()" [@slideInLeft]="sec1 ? 'visible' : 'hidden'">
-            <div class="">
-                <img [src]="pencilhub_watermark" class="w-[7.5rem] ml-[-3px]" alt=""/>
+            <div class="mb-3">
+                <img src="assets/images/mainpage/new profile.png" class="w-[4rem] ml-[-3px]" alt=""/>
             </div>
-            <div class="mb-3 sm:max-w-[24rem] xl:max-w-[27rem]">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. In sit accusamus adipisci, qui quidem suscipit eos 
+            <div class="mb-3 font-extrabold text-[1.7rem] sm:max-w-[24rem] xl:max-w-[27rem]">
+                Learn. Create. Inspire.
             </div>
             <div class="flex gap-2">
-                <div *ngFor="let icon of socialMediaIcons" class="">
+                <div *ngFor="let icon of socialMediaIcons" class="w-8 h-8">
                     <img [src]="icon.img" (click)="navigate(icon.messenger)" alt="" class="hover:cursor-pointer">
                 </div>
             </div>
         </div>
     
-        <div class="sm:w-1/2 flex gap-8 md:justify-around">
-            <div class="hidden sm:flex flex-col gap-2" (inView)="sec2View()" [@fadeIn]="sec2 ? 'visible' : 'hidden'">
-                <div class="text-[1.2rem]">Company</div>
+        <div class="w-full sm:w-1/2 flex gap-8 md:justify-around relative">
+            <div class="sm:flex flex-col gap-2" (inView)="sec2View()" [@fadeIn]="sec2 ? 'visible' : 'hidden'">
+                <div class="text-[1.2rem]">Quick links</div>
                 <ul class="flex flex-col text-gray-400">
                     <li>
                         <a (click)="onFooterNavigate('about-us')" class="hover:text-gray-200" href="">About Us</a>

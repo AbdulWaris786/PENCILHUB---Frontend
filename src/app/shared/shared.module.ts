@@ -8,6 +8,7 @@ import { LiveSubsComponent } from "./components/liveSubs/livesub.component";
 import { ReactiveFormsModule } from "@angular/forms";
 import { FooterComponent } from "./components/footer/footer.component";
 import { SafeUrlPipe } from "./safe-url.pipe";
+import { MySkills } from "./components/my-skills/mySkills.component";
 
 @NgModule({
     declarations:[
@@ -16,7 +17,8 @@ import { SafeUrlPipe } from "./safe-url.pipe";
         LiveSubsComponent,
         FooterComponent,
         inViewDirective,
-        SafeUrlPipe
+        SafeUrlPipe,
+        MySkills
     ],
     exports:[
         HeaderComponent,
@@ -24,7 +26,8 @@ import { SafeUrlPipe } from "./safe-url.pipe";
         LiveSubsComponent,
         FooterComponent,
         inViewDirective,
-        SafeUrlPipe
+        SafeUrlPipe,
+        MySkills
     ],
     imports:[
         CommonModule,

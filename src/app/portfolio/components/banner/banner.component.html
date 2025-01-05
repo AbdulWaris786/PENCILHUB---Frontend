@@ -1,16 +1,29 @@
-<div class="h-auto sm:h-[28rem] max-h-[730px] lg:h-screen xl:h-screen w-full flex flex-col sm:flex-row items-center pt-3 sm:pt-1 sm:bg-layer-one-backround bg-cover bg-center bg-no-repeat text-white">
-    <div id="text_div" class="pt-2 sm:w-1/2 px-[8.5%] mt-[4rem] sm:mt-0 sm:flex sm:justify-end" >
-        <div class="lg:pl-[]" (inView)="onSlideIn()" [@slideInLeft]="slideInView ? 'visible' : 'hidden'">
-            <div class="text-center sm:text-start max-w-[20rem] xl:max-w-[25rem] text-[2.5rem] sm:text-[3.5rem] xl:text-[3rem]">
-                <b><i>VIDEO EDITOR</i></b>
-            </div>
-            <div class="text-center sm:text-start text-[1.05rem] xl:text-[1.2rem]">
-                MUHAMMED MIKDAD MK
+<div class="flex relative max-w-[100vw] pb-20 md:pb-0 overflow-hidden bg-layer-one-backround_2 bg-no-repeat flex-col-reverse md:flex-row md:gap-5 lg:gap-20 h-auto md:h-screen sm:items-end md:max-h-[740px] bg-opacity-10 text-gray-50 px-[3rem] sm:px-[4rem]" style="background-position: 25% -5%; background-size: 140%;">
+    <div class="absolute inset-0 bg-black/85"></div>
+    <div id="text_div" class="w-full md:w-1/2 md:h-full justify-center sm:items-center md:items-end lg:items-center flex md:justify-center pt-8 md:pt-[15rem] 2xl:md:pt-[22rem] md:pb-[3rem]">
+        <div class="max-w-[500px]" (inView)="onSlideIn()" [@slideInLeft]="slideInView ? 'visible' : 'hidden'">
+            <p class="mb-1 sm:text-[1.5rem]">Hello, i am Mikdad mk</p>
+            <h1 class="mb-5 font-bold text-[1.5rem] sm:text-[2rem]">
+                Video Editor & <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Graphic designer
+            </h1>
+            <button (click)="navigate()" class="mb-4 px-4 py-2 rounded-md bg-[#844ef2] transition ease-in-out active:scale-95">Join us on Youtube</button>
+            <div class="grid grid-cols-3 place-items-center lg:grid-flow-col lg:grid-cols-none"> 
+                <div class="w-16 lg:mr-1 h-16 bg-contain bg-no-repeat bg-center bg-adobe-premiere"></div>
+                <div class="w-12 lg:mr-3 h-12 bg-contain bg-no-repeat bg-center bg-after-effect"></div>
+                <div class="w-11 lg:mr-3 h-11 bg-contain bg-no-repeat bg-center bg-adobe-audition"></div> 
+                <div class="w-11 lg:mr-3 h-11 bg-contain bg-no-repeat bg-center bg-adobe-media-encounder"></div>
+                <div class="w-14 h-14 bg-contain bg-no-repeat bg-center bg-light-room"></div>
+                <div class="w-20 h-20 bg-contain bg-no-repeat bg-center bg-adobe-photoshop"></div>
             </div>
         </div>
     </div>
-    <div class="w-full sm:w-1/2 sm:h-full flex justify-center sm:justify-start bg-layer-one-backround sm:bg-none bg-contain bg-center bg-no-repeat" (inView)="onFadeIn()" [@fadeIMG]="slideInView ? 'visible' : 'hidden'">
-        <img [src]="bannerImg" alt="" class="sm:h-full max-w-[20rem] sm:max-w-[33rem] sm:mt-10 h-[90%] lg:h-[44rem] xl:h-[44rem] lg:w-[37rem] lg:mt-[5.4rem]">
+    <div class="flex w-full md:w-1/2 items-end justify-center md:justify-start md:h-full" (inView)="onFadeIn()" [@fadeIMG]="slideInView ? 'visible' : 'hidden'">
+        <div class="aspect-[3/4] w-full relative max-w-[300px] md:max-w-[500px]
+            after:w-[20rem] after:h-[20rem] after:absolute after:-top-36 md:after:top-24 after:-left-32 sm:after:-left-60 after:rounded-full after:bg-[#7821b6] after:bg-opacity-25 after:blur-2xl
+            before:w-[25rem] before:h-[25rem] before:absolute before:-top-32 before:-right-80 before:rounded-full before:bg-[#7821b6] before:bg-opacity-25 before:blur-2xl">
+            <img [src]="bannerImg" alt="" class="z-10 absolute inset-0 w-full h-full object-cover">
+        </div>
     </div>
 </div>
 

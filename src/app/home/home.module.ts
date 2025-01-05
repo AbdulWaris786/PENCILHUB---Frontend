@@ -4,6 +4,7 @@ import { LayerOneComponent } from "./components/layerOne/layerone.component";
 import { CommonModule } from "@angular/common";
 import { SliderComponent } from "./components/sliderComponent/slider.component";
 import { SharedModule } from "../shared/shared.module";
+import { MySkills } from "../shared/components/my-skills/mySkills.component";
 
 @NgModule({
     declarations:[
@@ -13,7 +14,7 @@ import { SharedModule } from "../shared/shared.module";
     ],
     imports:[
         CommonModule,
-        SharedModule
+        SharedModule,
     ],
     exports:[
         MainPageComponent,

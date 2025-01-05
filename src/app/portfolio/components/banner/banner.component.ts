@@ -23,4 +23,8 @@ export class BannerComponent {
         this.slideInView = true
         this.cdr.detectChanges()
     }
+
+    navigate() {
+        window.open("https://www.youtube.com/PencilHub")
+    }
 }

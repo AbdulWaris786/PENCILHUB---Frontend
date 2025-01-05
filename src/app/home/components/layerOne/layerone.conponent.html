@@ -1,8 +1,10 @@
 <div 
     (inView)="onBannerTextInView()"
-    class="h-auto lg:h-screen lg:max-h-[730px] w-full flex flex-col sm:flex-row items-center py-3 lg:py-0 sm:bg-layer-one-backround bg-cover bg-center bg-no-repeat overflow-hidden"
+    class="h-auto bg-black lg:h-screen lg:max-h-[740px] w-full flex flex-col sm:flex-row items-center py-3 lg:py-0 sm:bg-layer-one-backround_2 bg-no-repeat bg-opacity-10 overflow-hidden"
+    style="background-position: 25% -5%; background-size: 140%;"
 >
-    <div class="py-10 sm:py-2 px-[8%] lg:px-[8.5%] sm:px-0 sm:w-1/2 lg:flex flex-col items-end lg:items-start gap-5">
+    <div class="absolute inset-0 bg-black/85"></div>
+    <div class="relative py-10 sm:py-2 px-[8%] lg:px-[8.5%] sm:px-0 sm:w-1/2 lg:flex flex-col items-end lg:items-start gap-5 sm:mt-[18%]">
         <div class="sm:pl-[15%] lg:pl-0 max-w-[34rem] mt-[3.5rem] sm:mt-0 flex justify-center sm:justify-start" [@fadeIn]="slideInLeftText ? 'visible' : 'hidden'">
             <img [src]="pencilhubText" class="min-w-[12rem] w-[15rem] max-w-[17rem]">
         </div>
@@ -11,7 +13,7 @@
                 Join us to master video and photo editing, from basics to pro-level <br>Let's create something amazing together!
             </div>
             <div class="sm:pl-[15%] lg:pl-0 w-full flex justify-center sm:justify-start pt-2">
-                <button [@fadeIn]="slideInLeftText ? 'visible' : 'hidden'" class="bg-[rgb(132,78,242)] text-white text-center rounded-[8px] text-[20px] font-serif px-5 py-1 transition ease-in-out active:scale-[.98]" (click)="navigate()">
+                <button [@fadeIn]="slideInLeftText ? 'visible' : 'hidden'" class="bg-[#844ef2] text-white text-center rounded-[8px] text-[20px] font-serif px-5 py-1 transition ease-in-out active:scale-[.98]" (click)="navigate()">
                     Join us on YouTube!
                 </button>
             </div>

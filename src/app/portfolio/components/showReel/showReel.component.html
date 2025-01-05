@@ -1,6 +1,6 @@
-<div class="bg-[rgb(15,7,21)] w-full px-5 py-10 sm:py-[5rem]  flex flex-col items-center gap-[1.5rem] text-[rgb(255,255,255)] overflow-hidden">
+<div class="bg-gradient-to-br from-[#0f0617] via-black to-black w-full px-5 py-10 sm:py-[5rem]  flex flex-col items-center gap-[1.5rem] text-[rgb(255,255,255)] overflow-hidden">
     <div 
-        class="text-[2.5rem] sm:text-[3.5rem]" 
+        class="text-[2.5rem] sm:text-[3.5rem] bg-text_gradient bg-clip-text text-transparent" 
         [@slideInLeft]="headingInView ? 'visible' : 'hidden'"
         (inView)="onHeadingInView()"
         inView

@@ -1,8 +1,8 @@
-<div class="bg-[rgb(15,7,21)] w-full px-5 py-[3rem] sm:py-[5rem] flex flex-col items-center gap-[1.5rem] text-[rgb(255,255,255)] overflow-hidden">
-    <div class="text-[2.5rem] sm:text-[3.5rem]" #heading><b>Recent Works</b></div>
+<div class="bg-black w-full px-5 py-[3rem] sm:py-[5rem] flex flex-col items-center gap-[1.5rem] text-[rgb(255,255,255)] overflow-hidden">
+    <div class="text-[2.5rem] sm:text-[3.5rem] bg-text_gradient bg-clip-text text-transparent" #heading><b>Recent Works</b></div>
 
     <!-- Grid container -->
-    <div class="grid place-items-center gap-10 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 w-full md:w-4/5 xl:w-3/4">
+    <div class="grid place-items-center gap-10 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 w-full md:w-4/5 xl:w-3/4 ">
         <!-- Loop over visible contents -->
         <div 
             *ngFor="let content of visibleContents" 

@@ -1,6 +1,8 @@
-<div class="bg-[rgb(15,7,21)] w-full px-5 py-[3rem] sm:py-[5rem] flex flex-col items-center gap-[1.5rem] text-[rgb(255,255,255)] overflow-hidden">
+<div class="bg-black w-full px-5 py-[3rem] sm:py-[5rem] flex flex-col items-center gap-[1.5rem] text-[rgb(255,255,255)] overflow-hidden">
     <div 
-        class="text-[2.5rem] sm:text-[3.5rem] "
+        class="text-[2.5rem] sm:text-[3.5rem] relative
+            after:w-[12rem] after:h-[12rem] after:absolute after:top-0 after:-right-96 after:rounded-full after:bg-violet-900 after:bg-opacity-40 after:blur-2xl
+            before:w-[12rem] before:h-[12rem] before:absolute before:-top-[3rem] before:-left-40 before:rounded-full before:bg-violet-900 before:bg-opacity-40 before:blur-2xl"
         [@slideInLeft]="slideLeftAnimation ? 'visible' : 'hidden'"
         (inView)="onHeadInView()"
         inView
